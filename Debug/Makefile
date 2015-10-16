@@ -38,6 +38,7 @@ SUBDIRS :=  \
 ../glcd/controllers \
 ../Hall\ Effect \
 ../glcd \
+../I2C \
 ../uart \
 ../RTC \
 ../Source \
@@ -58,6 +59,7 @@ C_SRCS +=  \
 ../glcd/text_tiny.c \
 ../glcd/unit_tests.c \
 ../Hall\ Effect/Hall\ Effect.c \
+../I2C/I2C.c \
 ../main.c \
 ../RTC/RTC.c \
 ../Source/croutine.c \
@@ -87,6 +89,7 @@ glcd/text.o \
 glcd/text_tiny.o \
 glcd/unit_tests.o \
 Hall\ Effect/Hall\ Effect.o \
+I2C/I2C.o \
 main.o \
 RTC/RTC.o \
 Source/croutine.o \
@@ -109,6 +112,7 @@ glcd/text.o \
 glcd/text_tiny.o \
 glcd/unit_tests.o \
 "Hall Effect/Hall Effect.o" \
+I2C/I2C.o \
 main.o \
 RTC/RTC.o \
 Source/croutine.o \
@@ -131,6 +135,7 @@ glcd/text.d \
 glcd/text_tiny.d \
 glcd/unit_tests.d \
 Hall\ Effect/Hall\ Effect.d \
+I2C/I2C.d \
 main.d \
 RTC/RTC.d \
 Source/croutine.d \
@@ -153,6 +158,7 @@ glcd/text.d \
 glcd/text_tiny.d \
 glcd/unit_tests.d \
 "Hall Effect/Hall Effect.d" \
+I2C/I2C.d \
 main.d \
 RTC/RTC.d \
 Source/croutine.d \
@@ -225,6 +231,8 @@ Hall\ Effect/Hall\ Effect.o: ../Hall\ Effect/Hall\ Effect.c
 
 
 
+
+
 glcd/controllers/%.o: ../glcd/controllers/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
@@ -247,6 +255,13 @@ glcd/%.o: ../glcd/%.c
 	
 
 Hall\ Effect/%.o: ../Hall\ Effect/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.8.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DGLCD_DEVICE_AVR8 -DGLCD_CONTROLLER_PCD8544 -DGLCD_USE_AVR_DELAY -D__DELAY_BACKWARD_COMPATIBLE__  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+I2C/%.o: ../I2C/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DGLCD_DEVICE_AVR8 -DGLCD_CONTROLLER_PCD8544 -DGLCD_USE_AVR_DELAY -D__DELAY_BACKWARD_COMPATIBLE__  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

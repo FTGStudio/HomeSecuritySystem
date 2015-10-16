@@ -12,6 +12,7 @@
 #include "Source/include/FreeRTOS.h"
 #include "Source/include/task.h"
 #include "uart/uart.h"
+#include "I2C/I2C.h"
 
 
 #define F_CPU						8000000

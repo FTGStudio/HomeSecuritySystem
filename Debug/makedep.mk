@@ -20,6 +20,8 @@ glcd\unit_tests.c
 
 Hall Effect\Hall Effect.c
 
+I2C\I2C.c
+
 main.c
 
 RTC\RTC.c
