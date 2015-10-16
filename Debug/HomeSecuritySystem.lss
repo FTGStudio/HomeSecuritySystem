@@ -1,5 +1,5 @@
 
-freeRTOS.elf:     file format elf32-avr
+HomeSecuritySystem.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -17,15 +17,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   6 .debug_abbrev 000009e8  00000000  00000000  000037b9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000d18  00000000  00000000  000041a1  2**0
+  7 .debug_line   00000d25  00000000  00000000  000041a1  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000005c8  00000000  00000000  00004ebc  2**2
+  8 .debug_frame  000005c8  00000000  00000000  00004ec8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000c89  00000000  00000000  00005484  2**0
+  9 .debug_str    00000c48  00000000  00000000  00005490  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00001db5  00000000  00000000  0000610d  2**0
+ 10 .debug_loc    00001db5  00000000  00000000  000060d8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 000001f8  00000000  00000000  00007ec2  2**0
+ 11 .debug_ranges 000001f8  00000000  00000000  00007e8d  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -109,11 +109,10 @@ void vLEDInit(void)
       a8:	08 95       	ret
 
 000000aa <vLEDToggle>:
+}
 
 void vLEDToggle(void)
 {
-	
-	//Toggle LED
 	PORTB ^= _BV(PB5);
       aa:	95 b1       	in	r25, 0x05	; 5
       ac:	80 e2       	ldi	r24, 0x20	; 32
@@ -122,7 +121,6 @@ void vLEDToggle(void)
       b2:	08 95       	ret
 
 000000b4 <vLEDFlashTask>:
-	
 }
 
 void vLEDFlashTask( void *pvParameters )
@@ -2521,10 +2519,10 @@ void USART_Init(unsigned int ubrr) {
 	UBRR0L = (unsigned char)ubrr;
      c78:	80 93 c4 00 	sts	0x00C4, r24
 
-    UCSR0C = _BV(USBS0) | _BV(UCSZ01) | _BV(UCSZ00); /* 8-bit data, 2 stop bits */ 
+	UCSR0C = _BV(USBS0) | _BV(UCSZ01) | _BV(UCSZ00); /* 8-bit data, 2 stop bits */
      c7c:	8e e0       	ldi	r24, 0x0E	; 14
      c7e:	80 93 c2 00 	sts	0x00C2, r24
-    UCSR0B = _BV(RXEN0) | _BV(TXEN0);   /* Enable RX and TX */    
+	UCSR0B = _BV(RXEN0) | _BV(TXEN0);   /* Enable RX and TX */
      c82:	88 e1       	ldi	r24, 0x18	; 24
      c84:	80 93 c1 00 	sts	0x00C1, r24
      c88:	08 95       	ret
@@ -2535,23 +2533,23 @@ void USART_Init(unsigned int ubrr) {
 void USART_Transmit(char c, FILE *stream) {
      c8a:	cf 93       	push	r28
      c8c:	c8 2f       	mov	r28, r24
-    if (c == '\n') {
+	if (c == '\n') {
      c8e:	8a 30       	cpi	r24, 0x0A	; 10
      c90:	19 f4       	brne	.+6      	; 0xc98 <USART_Transmit+0xe>
-        USART_Transmit('\r', stream); /* transmit carriage return with new line */
+		USART_Transmit('\r', stream); /* transmit carriage return with new line */
      c92:	8d e0       	ldi	r24, 0x0D	; 13
      c94:	0e 94 45 06 	call	0xc8a	; 0xc8a <USART_Transmit>
-    }
-    /* Wait for empty transmit buffer */
-    while ( !( UCSR0A & (1<<UDRE0)) )
+	}
+	/* Wait for empty transmit buffer */
+	while ( !( UCSR0A & (1<<UDRE0)) )
      c98:	e0 ec       	ldi	r30, 0xC0	; 192
      c9a:	f0 e0       	ldi	r31, 0x00	; 0
      c9c:	90 81       	ld	r25, Z
      c9e:	95 ff       	sbrs	r25, 5
      ca0:	fd cf       	rjmp	.-6      	; 0xc9c <USART_Transmit+0x12>
-    ;
-    /* Put data into buffer, sends the data */
-    UDR0 = c;
+	;
+	/* Put data into buffer, sends the data */
+	UDR0 = c;
      ca2:	c0 93 c6 00 	sts	0x00C6, r28
 }
      ca6:	cf 91       	pop	r28
@@ -2560,16 +2558,16 @@ void USART_Transmit(char c, FILE *stream) {
 00000caa <USART_Receive>:
 
 char USART_Receive(FILE *stream) {
-    /* Wait for data to be received */
-    while ( !(UCSR0A & (1<<RXC0)) )
+	/* Wait for data to be received */
+	while ( !(UCSR0A & (1<<RXC0)) )
      caa:	e0 ec       	ldi	r30, 0xC0	; 192
      cac:	f0 e0       	ldi	r31, 0x00	; 0
      cae:	80 81       	ld	r24, Z
      cb0:	88 23       	and	r24, r24
      cb2:	ec f7       	brge	.-6      	; 0xcae <USART_Receive+0x4>
-    ;
-    /* Get and return received data from buffer */
-    return UDR0;
+	;
+	/* Get and return received data from buffer */
+	return UDR0;
      cb4:	80 91 c6 00 	lds	r24, 0x00C6
 }
      cb8:	08 95       	ret

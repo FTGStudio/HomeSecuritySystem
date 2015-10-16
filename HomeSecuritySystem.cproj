@@ -13,57 +13,57 @@
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <AssemblyName>freeRTOS</AssemblyName>
-    <Name>freeRTOS</Name>
+    <Name>HomeSecuritySystem</Name>
     <RootNamespace>freeRTOS</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
-    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data xmlns="">
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.21.0" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.21.0" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
-  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>NDEBUG</Value>
-    </ListValues>
-  </avrgcc.compiler.symbols.DefSymbols>
-  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libm</Value>
-    </ListValues>
-  </avrgcc.linker.libraries.Libraries>
-</AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
     </ToolchainSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -79,6 +79,10 @@
   <avrgcc.compiler.symbols.DefSymbols>
     <ListValues>
       <Value>DEBUG</Value>
+      <Value>GLCD_DEVICE_AVR8</Value>
+      <Value>GLCD_CONTROLLER_PCD8544</Value>
+      <Value>GLCD_USE_AVR_DELAY</Value>
+      <Value>__DELAY_BACKWARD_COMPATIBLE__</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -96,7 +100,100 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="glcd\controllers\PCD8544.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\controllers\PCD8544.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\devices\AVR8.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\devices\AVR8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Bebas_Neue18x36_Numbers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Bebas_Neue20x36_Bold_Numbers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Earthbound_12x19_48to57.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\font5x7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Liberation_Sans11x14_Numbers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Liberation_Sans15x21_Numbers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Liberation_Sans17x17_Alpha.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Liberation_Sans20x28_Numbers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\fonts\Liberation_Sans27x36_Numbers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd_controllers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd_devices.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd_graphics.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd_graphs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd_text.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\glcd_text_tiny.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\graphics.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\graphs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\text.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\text_tiny.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\unit_tests.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="glcd\unit_tests.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Hall Effect\Hall Effect.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Hall Effect\Hall Effect.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTC\RTC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTC\RTC.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Source\croutine.c">
@@ -168,14 +265,24 @@
     <Compile Include="Source\timers.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="uart.c">
+    <Compile Include="splash.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="uart.h">
+    <Compile Include="uart\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uart\uart.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="glcd\fonts" />
+    <Folder Include="glcd\devices" />
+    <Folder Include="glcd\controllers" />
+    <Folder Include="Hall Effect" />
+    <Folder Include="glcd" />
+    <Folder Include="uart" />
+    <Folder Include="RTC" />
     <Folder Include="Source" />
     <Folder Include="Source\include" />
     <Folder Include="Source\portable" />

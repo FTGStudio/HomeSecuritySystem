@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include "Source/include/FreeRTOS.h"
 #include "Source/include/task.h"
-#include "uart.h"
+#include "uart/uart.h"
 
 
 #define F_CPU						8000000
@@ -27,14 +27,7 @@ void vLEDInit(void)
 
 void vLEDToggle(void)
 {
-	for(int i=0; i< 1000; i++)
-	{
-		printf("%d\n", i);
-	}
-	//printf("\nT\n");
-	//Toggle LED
 	PORTB ^= _BV(PB5);
-	
 }
 
 void vLEDFlashTask( void *pvParameters )
