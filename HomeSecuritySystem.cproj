@@ -196,6 +196,15 @@
     <Compile Include="I2C\I2C.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LCD\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD\LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD\LCDTask.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -286,6 +295,15 @@
     <Compile Include="uart\uart.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="WiFi\WiFi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="WiFi\WiFi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="WiFi\WiFiTask.c">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="glcd\fonts" />
@@ -294,6 +312,8 @@
     <Folder Include="Hall_Effect" />
     <Folder Include="glcd" />
     <Folder Include="I2C" />
+    <Folder Include="LCD" />
+    <Folder Include="WiFi" />
     <Folder Include="uart" />
     <Folder Include="RTC" />
     <Folder Include="Source" />

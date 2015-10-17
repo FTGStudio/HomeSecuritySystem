@@ -39,6 +39,8 @@ SUBDIRS :=  \
 ../Hall_Effect \
 ../glcd \
 ../I2C \
+../LCD \
+../WiFi \
 ../uart \
 ../RTC \
 ../Source \
@@ -61,6 +63,8 @@ C_SRCS +=  \
 ../Hall_Effect/HallEffectTask.c \
 ../Hall_Effect/Hall_Effect.c \
 ../I2C/I2C.c \
+../LCD/LCD.c \
+../LCD/LCDTask.c \
 ../main.c \
 ../RTC/RTC.c \
 ../RTC/RTCTask.c \
@@ -72,7 +76,9 @@ C_SRCS +=  \
 ../Source/queue.c \
 ../Source/tasks.c \
 ../Source/timers.c \
-../uart/uart.c
+../uart/uart.c \
+../WiFi/WiFi.c \
+../WiFi/WiFiTask.c
 
 
 PREPROCESSING_SRCS += 
@@ -93,6 +99,8 @@ glcd/unit_tests.o \
 Hall_Effect/HallEffectTask.o \
 Hall_Effect/Hall_Effect.o \
 I2C/I2C.o \
+LCD/LCD.o \
+LCD/LCDTask.o \
 main.o \
 RTC/RTC.o \
 RTC/RTCTask.o \
@@ -104,7 +112,9 @@ Source/portable/MemMang/heap_1.o \
 Source/queue.o \
 Source/tasks.o \
 Source/timers.o \
-uart/uart.o
+uart/uart.o \
+WiFi/WiFi.o \
+WiFi/WiFiTask.o
 
 OBJS_AS_ARGS +=  \
 glcd/controllers/PCD8544.o \
@@ -118,6 +128,8 @@ glcd/unit_tests.o \
 Hall_Effect/HallEffectTask.o \
 Hall_Effect/Hall_Effect.o \
 I2C/I2C.o \
+LCD/LCD.o \
+LCD/LCDTask.o \
 main.o \
 RTC/RTC.o \
 RTC/RTCTask.o \
@@ -129,7 +141,9 @@ Source/portable/MemMang/heap_1.o \
 Source/queue.o \
 Source/tasks.o \
 Source/timers.o \
-uart/uart.o
+uart/uart.o \
+WiFi/WiFi.o \
+WiFi/WiFiTask.o
 
 C_DEPS +=  \
 glcd/controllers/PCD8544.d \
@@ -143,6 +157,8 @@ glcd/unit_tests.d \
 Hall_Effect/HallEffectTask.d \
 Hall_Effect/Hall_Effect.d \
 I2C/I2C.d \
+LCD/LCD.d \
+LCD/LCDTask.d \
 main.d \
 RTC/RTC.d \
 RTC/RTCTask.d \
@@ -154,7 +170,9 @@ Source/portable/MemMang/heap_1.d \
 Source/queue.d \
 Source/tasks.d \
 Source/timers.d \
-uart/uart.d
+uart/uart.d \
+WiFi/WiFi.d \
+WiFi/WiFiTask.d
 
 C_DEPS_AS_ARGS +=  \
 glcd/controllers/PCD8544.d \
@@ -168,6 +186,8 @@ glcd/unit_tests.d \
 Hall_Effect/HallEffectTask.d \
 Hall_Effect/Hall_Effect.d \
 I2C/I2C.d \
+LCD/LCD.d \
+LCD/LCDTask.d \
 main.d \
 RTC/RTC.d \
 RTC/RTCTask.d \
@@ -179,7 +199,9 @@ Source/portable/MemMang/heap_1.d \
 Source/queue.d \
 Source/tasks.d \
 Source/timers.d \
-uart/uart.d
+uart/uart.d \
+WiFi/WiFi.d \
+WiFi/WiFiTask.d
 
 OUTPUT_FILE_PATH +=HomeSecuritySystem.elf
 
@@ -195,6 +217,14 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
+
+
 
 
 
@@ -277,6 +307,13 @@ I2C/%.o: ../I2C/%.c
 	@echo Finished building: $<
 	
 
+LCD/%.o: ../LCD/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.8.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DGLCD_DEVICE_AVR8 -DGLCD_CONTROLLER_PCD8544 -DGLCD_USE_AVR_DELAY -D__DELAY_BACKWARD_COMPATIBLE__  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 ./%.o: .././%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
@@ -313,6 +350,13 @@ Source/portable/MemMang/%.o: ../Source/portable/MemMang/%.c
 	
 
 uart/%.o: ../uart/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 4.8.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DGLCD_DEVICE_AVR8 -DGLCD_CONTROLLER_PCD8544 -DGLCD_USE_AVR_DELAY -D__DELAY_BACKWARD_COMPATIBLE__  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+WiFi/%.o: ../WiFi/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DGLCD_DEVICE_AVR8 -DGLCD_CONTROLLER_PCD8544 -DGLCD_USE_AVR_DELAY -D__DELAY_BACKWARD_COMPATIBLE__  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

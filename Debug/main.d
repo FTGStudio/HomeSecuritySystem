@@ -25,7 +25,12 @@ main.d main.o: .././main.c \
  .././RTC/../Source/include/queue.h .././Hall_Effect/Hall_Effect.h \
  .././Hall_Effect/../Source/include/FreeRTOS.h \
  .././Hall_Effect/../Source/include/task.h \
- .././Hall_Effect/../Source/include/queue.h .././uart/uart.h
+ .././Hall_Effect/../Source/include/queue.h .././LCD/LCD.h \
+ .././LCD/../Source/include/FreeRTOS.h .././LCD/../Source/include/task.h \
+ .././LCD/../Source/include/queue.h .././WiFi/WiFi.h \
+ .././WiFi/../Source/include/FreeRTOS.h \
+ .././WiFi/../Source/include/task.h .././WiFi/../Source/include/queue.h \
+ .././uart/uart.h
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -96,5 +101,21 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 .././Hall_Effect/../Source/include/task.h:
 
 .././Hall_Effect/../Source/include/queue.h:
+
+.././LCD/LCD.h:
+
+.././LCD/../Source/include/FreeRTOS.h:
+
+.././LCD/../Source/include/task.h:
+
+.././LCD/../Source/include/queue.h:
+
+.././WiFi/WiFi.h:
+
+.././WiFi/../Source/include/FreeRTOS.h:
+
+.././WiFi/../Source/include/task.h:
+
+.././WiFi/../Source/include/queue.h:
 
 .././uart/uart.h:

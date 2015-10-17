@@ -85,9 +85,11 @@ Allocating common symbols
 Common symbol       size              file
 
 glcd_bbox           0x4               glcd/glcd.o
+lcdMsgQ             0x2               LCD/LCDTask.o
 glcd_buffer         0x1f8             glcd/glcd.o
 glcd_buffer_selected
                     0x2               glcd/glcd.o
+wifiMsgQ            0x2               WiFi/WiFiTask.o
 font_current        0x7               glcd/text.o
 hallEffectMsgQ      0x2               Hall_Effect/HallEffectTask.o
 rtcMsgQ             0x2               RTC/RTCTask.o
@@ -391,6 +393,15 @@ Discarded input sections
  .debug_str     0x00000000      0x212 I2C/I2C.o
  .comment       0x00000000       0x31 I2C/I2C.o
  .debug_frame   0x00000000       0xdc I2C/I2C.o
+ .text          0x00000000        0x0 LCD/LCD.o
+ .data          0x00000000        0x0 LCD/LCD.o
+ .bss           0x00000000        0x0 LCD/LCD.o
+ .debug_line    0x00000000        0x0 LCD/LCD.o
+ .debug_str     0x00000000        0x0 LCD/LCD.o
+ .comment       0x00000000       0x31 LCD/LCD.o
+ .text          0x00000000        0x0 LCD/LCDTask.o
+ .data          0x00000000        0x0 LCD/LCDTask.o
+ .bss           0x00000000        0x0 LCD/LCDTask.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -608,6 +619,15 @@ Discarded input sections
  .text          0x00000000        0x0 uart/uart.o
  .data          0x00000000        0x0 uart/uart.o
  .bss           0x00000000        0x0 uart/uart.o
+ .text          0x00000000        0x0 WiFi/WiFi.o
+ .data          0x00000000        0x0 WiFi/WiFi.o
+ .bss           0x00000000        0x0 WiFi/WiFi.o
+ .debug_line    0x00000000        0x0 WiFi/WiFi.o
+ .debug_str     0x00000000        0x0 WiFi/WiFi.o
+ .comment       0x00000000       0x31 WiFi/WiFi.o
+ .text          0x00000000        0x0 WiFi/WiFiTask.o
+ .data          0x00000000        0x0 WiFi/WiFiTask.o
+ .bss           0x00000000        0x0 WiFi/WiFiTask.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libm.a(cmpsf2.o)
@@ -963,6 +983,8 @@ LOAD glcd/unit_tests.o
 LOAD Hall_Effect/HallEffectTask.o
 LOAD Hall_Effect/Hall_Effect.o
 LOAD I2C/I2C.o
+LOAD LCD/LCD.o
+LOAD LCD/LCDTask.o
 LOAD main.o
 LOAD RTC/RTC.o
 LOAD RTC/RTCTask.o
@@ -975,6 +997,8 @@ LOAD Source/queue.o
 LOAD Source/tasks.o
 LOAD Source/timers.o
 LOAD uart/uart.o
+LOAD WiFi/WiFi.o
+LOAD WiFi/WiFiTask.o
 START GROUP
 LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libm.a
 END GROUP
@@ -1074,7 +1098,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1730
+.text           0x00000000     0x17e6
  *(.vectors)
  .vectors       0x00000000       0x68 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vector_default
@@ -1161,140 +1185,146 @@ END GROUP
  .text.vHallEffectTask
                 0x000000a6       0x46 Hall_Effect/HallEffectTask.o
                 0x000000a6                vHallEffectTask
- .text.main     0x000000ec       0xa0 main.o
-                0x000000ec                main
+ .text.vLCDTask
+                0x000000ec       0x44 LCD/LCDTask.o
+                0x000000ec                vLCDTask
+ .text.main     0x00000130       0xec main.o
+                0x00000130                main
  .text.vRTCTask
-                0x0000018c       0x28 RTC/RTCTask.o
-                0x0000018c                vRTCTask
+                0x0000021c       0x28 RTC/RTCTask.o
+                0x0000021c                vRTCTask
  .text.vListInitialise
-                0x000001b4       0x1c Source/list.o
-                0x000001b4                vListInitialise
+                0x00000244       0x1c Source/list.o
+                0x00000244                vListInitialise
  .text.vListInitialiseItem
-                0x000001d0        0x8 Source/list.o
-                0x000001d0                vListInitialiseItem
+                0x00000260        0x8 Source/list.o
+                0x00000260                vListInitialiseItem
  .text.vListInsertEnd
-                0x000001d8       0x42 Source/list.o
-                0x000001d8                vListInsertEnd
+                0x00000268       0x42 Source/list.o
+                0x00000268                vListInsertEnd
  .text.vListInsert
-                0x0000021a       0x62 Source/list.o
-                0x0000021a                vListInsert
+                0x000002aa       0x62 Source/list.o
+                0x000002aa                vListInsert
  .text.uxListRemove
-                0x0000027c       0x4c Source/list.o
-                0x0000027c                uxListRemove
+                0x0000030c       0x4c Source/list.o
+                0x0000030c                uxListRemove
  .text.pxPortInitialiseStack
-                0x000002c8       0xd8 Source/portable/ATMega323/port.o
-                0x000002c8                pxPortInitialiseStack
+                0x00000358       0xd8 Source/portable/ATMega323/port.o
+                0x00000358                pxPortInitialiseStack
  .text.xPortStartScheduler
-                0x000003a0       0x74 Source/portable/ATMega323/port.o
-                0x000003a0                xPortStartScheduler
+                0x00000430       0x74 Source/portable/ATMega323/port.o
+                0x00000430                xPortStartScheduler
  .text.vPortYield
-                0x00000414       0xb2 Source/portable/ATMega323/port.o
-                0x00000414                vPortYield
+                0x000004a4       0xb2 Source/portable/ATMega323/port.o
+                0x000004a4                vPortYield
  .text.vPortYieldFromTick
-                0x000004c6       0xb8 Source/portable/ATMega323/port.o
-                0x000004c6                vPortYieldFromTick
+                0x00000556       0xb8 Source/portable/ATMega323/port.o
+                0x00000556                vPortYieldFromTick
  .text.__vector_11
-                0x0000057e        0x6 Source/portable/ATMega323/port.o
-                0x0000057e                __vector_11
+                0x0000060e        0x6 Source/portable/ATMega323/port.o
+                0x0000060e                __vector_11
  .text.pvPortMalloc
-                0x00000584       0x6a Source/portable/MemMang/heap_1.o
-                0x00000584                pvPortMalloc
+                0x00000614       0x6a Source/portable/MemMang/heap_1.o
+                0x00000614                pvPortMalloc
  .text.vPortFree
-                0x000005ee        0x2 Source/portable/MemMang/heap_1.o
-                0x000005ee                vPortFree
+                0x0000067e        0x2 Source/portable/MemMang/heap_1.o
+                0x0000067e                vPortFree
  .text.prvCopyDataFromQueue
-                0x000005f0       0x34 Source/queue.o
+                0x00000680       0x34 Source/queue.o
  .text.prvUnlockQueue
-                0x00000624       0x94 Source/queue.o
+                0x000006b4       0x94 Source/queue.o
  .text.xQueueGenericReset
-                0x000006b8       0x7a Source/queue.o
-                0x000006b8                xQueueGenericReset
+                0x00000748       0x7a Source/queue.o
+                0x00000748                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x00000732       0x5c Source/queue.o
-                0x00000732                xQueueGenericCreate
+                0x000007c2       0x5c Source/queue.o
+                0x000007c2                xQueueGenericCreate
  .text.xQueueGenericReceive
-                0x0000078e      0x158 Source/queue.o
-                0x0000078e                xQueueGenericReceive
+                0x0000081e      0x158 Source/queue.o
+                0x0000081e                xQueueGenericReceive
  .text.prvResetNextTaskUnblockTime
-                0x000008e6       0x3e Source/tasks.o
+                0x00000976       0x3e Source/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x00000924       0x6e Source/tasks.o
+                0x000009b4       0x6e Source/tasks.o
  .text.xTaskGenericCreate
-                0x00000992      0x21c Source/tasks.o
-                0x00000992                xTaskGenericCreate
+                0x00000a22      0x21c Source/tasks.o
+                0x00000a22                xTaskGenericCreate
  .text.vTaskStartScheduler
-                0x00000bae       0x64 Source/tasks.o
-                0x00000bae                vTaskStartScheduler
+                0x00000c3e       0x64 Source/tasks.o
+                0x00000c3e                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00000c12        0xc Source/tasks.o
-                0x00000c12                vTaskSuspendAll
+                0x00000ca2        0xc Source/tasks.o
+                0x00000ca2                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x00000c1e      0x17e Source/tasks.o
-                0x00000c1e                xTaskIncrementTick
+                0x00000cae      0x17e Source/tasks.o
+                0x00000cae                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x00000d9c      0x106 Source/tasks.o
-                0x00000d9c                xTaskResumeAll
+                0x00000e2c      0x106 Source/tasks.o
+                0x00000e2c                xTaskResumeAll
  .text.prvIdleTask
-                0x00000ea2       0x78 Source/tasks.o
+                0x00000f32       0x78 Source/tasks.o
  .text.vTaskSwitchContext
-                0x00000f1a       0xbc Source/tasks.o
-                0x00000f1a                vTaskSwitchContext
+                0x00000faa       0xbc Source/tasks.o
+                0x00000faa                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x00000fd6       0x58 Source/tasks.o
-                0x00000fd6                vTaskPlaceOnEventList
+                0x00001066       0x58 Source/tasks.o
+                0x00001066                vTaskPlaceOnEventList
  .text.xTaskRemoveFromEventList
-                0x0000102e       0x90 Source/tasks.o
-                0x0000102e                xTaskRemoveFromEventList
+                0x000010be       0x90 Source/tasks.o
+                0x000010be                xTaskRemoveFromEventList
  .text.vTaskSetTimeOutState
-                0x000010be       0x16 Source/tasks.o
-                0x000010be                vTaskSetTimeOutState
+                0x0000114e       0x16 Source/tasks.o
+                0x0000114e                vTaskSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x000010d4       0x72 Source/tasks.o
-                0x000010d4                xTaskCheckForTimeOut
+                0x00001164       0x72 Source/tasks.o
+                0x00001164                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x00001146        0x8 Source/tasks.o
-                0x00001146                vTaskMissedYield
+                0x000011d6        0x8 Source/tasks.o
+                0x000011d6                vTaskMissedYield
  .text.USART_Init
-                0x0000114e       0x16 uart/uart.o
-                0x0000114e                USART_Init
+                0x000011de       0x16 uart/uart.o
+                0x000011de                USART_Init
  .text.USART_Transmit
-                0x00001164       0x20 uart/uart.o
-                0x00001164                USART_Transmit
+                0x000011f4       0x20 uart/uart.o
+                0x000011f4                USART_Transmit
  .text.USART_Receive
-                0x00001184       0x10 uart/uart.o
-                0x00001184                USART_Receive
+                0x00001214       0x10 uart/uart.o
+                0x00001214                USART_Receive
+ .text.vWifiTask
+                0x00001224       0x26 WiFi/WiFiTask.o
+                0x00001224                vWifiTask
  .text.avr-libc
-                0x00001194       0x12 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
-                0x00001194                memcpy
+                0x0000124a       0x12 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                0x0000124a                memcpy
  .text.avr-libc
-                0x000011a6       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(printf.o)
-                0x000011a6                printf
+                0x0000125c       0x28 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(printf.o)
+                0x0000125c                printf
  .text.avr-libc
-                0x000011ce      0x3a4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                0x000011ce                vfprintf
+                0x00001284      0x3a4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                0x00001284                vfprintf
  .text.avr-libc
-                0x00001572       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x00001572                strnlen_P
+                0x00001628       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x00001628                strnlen_P
  .text.avr-libc
-                0x00001588       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x00001588                strnlen
+                0x0000163e       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x0000163e                strnlen
  .text.avr-libc
-                0x0000159e       0x64 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x0000159e                fputc
+                0x00001654       0x64 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x00001654                fputc
  .text.avr-libc
-                0x00001602       0xbc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x00001602                __ultoa_invert
+                0x000016b8       0xbc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x000016b8                __ultoa_invert
  .text.libgcc.prologue
-                0x000016be       0x38 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_prologue.o)
-                0x000016be                __prologue_saves__
+                0x00001774       0x38 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_prologue.o)
+                0x00001774                __prologue_saves__
  .text.libgcc.prologue
-                0x000016f6       0x36 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_epilogue.o)
-                0x000016f6                __epilogue_restores__
-                0x0000172c                . = ALIGN (0x2)
+                0x000017ac       0x36 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_epilogue.o)
+                0x000017ac                __epilogue_restores__
+                0x000017e2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000172c        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
-                0x0000172c                _exit
-                0x0000172c                exit
+ .fini9         0x000017e2        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+                0x000017e2                _exit
+                0x000017e2                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1313,11 +1343,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000172c        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
+ .fini0         0x000017e2        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001730                _etext = .
+                0x000017e6                _etext = .
 
-.data           0x00800100       0x48 load address 0x00001730
+.data           0x00800100       0x54 load address 0x000017e6
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1332,82 +1362,88 @@ END GROUP
  .rodata.str1.1
                 0x0080011c       0x17 Hall_Effect/HallEffectTask.o
  .rodata.str1.1
-                0x00800133        0xf main.o
+                0x00800133        0x3 LCD/LCDTask.o
  .rodata.str1.1
-                0x00800142        0x5 Source/tasks.o
+                0x00800136       0x18 main.o
+ .rodata.str1.1
+                0x0080014e        0x5 Source/tasks.o
  *(.gnu.linkonce.d*)
-                0x00800148                . = ALIGN (0x2)
- *fill*         0x00800147        0x1 
-                0x00800148                _edata = .
-                0x00800148                PROVIDE (__data_end, .)
+                0x00800154                . = ALIGN (0x2)
+ *fill*         0x00800153        0x1 
+                0x00800154                _edata = .
+                0x00800154                PROVIDE (__data_end, .)
 
-.bss            0x00800148      0x45a
-                0x00800148                PROVIDE (__bss_start, .)
+.bss            0x00800154      0x45e
+                0x00800154                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.pucAlignedHeap.1869
-                0x00800148        0x2 Source/portable/MemMang/heap_1.o
+                0x00800154        0x2 Source/portable/MemMang/heap_1.o
  .bss.xNextFreeByte
-                0x0080014a        0x2 Source/portable/MemMang/heap_1.o
- .bss.ucHeap    0x0080014c      0x3e8 Source/portable/MemMang/heap_1.o
+                0x00800156        0x2 Source/portable/MemMang/heap_1.o
+ .bss.ucHeap    0x00800158      0x3e8 Source/portable/MemMang/heap_1.o
  .bss.uxSchedulerSuspended
-                0x00800534        0x1 Source/tasks.o
+                0x00800540        0x1 Source/tasks.o
  .bss.xNextTaskUnblockTime
-                0x00800535        0x2 Source/tasks.o
+                0x00800541        0x2 Source/tasks.o
  .bss.uxTaskNumber
-                0x00800537        0x1 Source/tasks.o
+                0x00800543        0x1 Source/tasks.o
  .bss.xNumOfOverflows
-                0x00800538        0x1 Source/tasks.o
+                0x00800544        0x1 Source/tasks.o
  .bss.xYieldPending
-                0x00800539        0x1 Source/tasks.o
+                0x00800545        0x1 Source/tasks.o
  .bss.uxPendedTicks
-                0x0080053a        0x1 Source/tasks.o
+                0x00800546        0x1 Source/tasks.o
  .bss.xSchedulerRunning
-                0x0080053b        0x1 Source/tasks.o
+                0x00800547        0x1 Source/tasks.o
  .bss.uxTopReadyPriority
-                0x0080053c        0x1 Source/tasks.o
+                0x00800548        0x1 Source/tasks.o
  .bss.xTickCount
-                0x0080053d        0x2 Source/tasks.o
+                0x00800549        0x2 Source/tasks.o
  .bss.uxCurrentNumberOfTasks
-                0x0080053f        0x1 Source/tasks.o
+                0x0080054b        0x1 Source/tasks.o
  .bss.xSuspendedTaskList
-                0x00800540        0x9 Source/tasks.o
+                0x0080054c        0x9 Source/tasks.o
  .bss.uxTasksDeleted
-                0x00800549        0x1 Source/tasks.o
+                0x00800555        0x1 Source/tasks.o
  .bss.xTasksWaitingTermination
-                0x0080054a        0x9 Source/tasks.o
+                0x00800556        0x9 Source/tasks.o
  .bss.xPendingReadyList
-                0x00800553        0x9 Source/tasks.o
+                0x0080055f        0x9 Source/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x0080055c        0x2 Source/tasks.o
+                0x00800568        0x2 Source/tasks.o
  .bss.pxDelayedTaskList
-                0x0080055e        0x2 Source/tasks.o
+                0x0080056a        0x2 Source/tasks.o
  .bss.xDelayedTaskList2
-                0x00800560        0x9 Source/tasks.o
+                0x0080056c        0x9 Source/tasks.o
  .bss.xDelayedTaskList1
-                0x00800569        0x9 Source/tasks.o
+                0x00800575        0x9 Source/tasks.o
  .bss.pxReadyTasksLists
-                0x00800572       0x24 Source/tasks.o
+                0x0080057e       0x24 Source/tasks.o
  .bss.pxCurrentTCB
-                0x00800596        0x2 Source/tasks.o
-                0x00800596                pxCurrentTCB
+                0x008005a2        0x2 Source/tasks.o
+                0x008005a2                pxCurrentTCB
  *(COMMON)
- COMMON         0x00800598        0x2 Hall_Effect/HallEffectTask.o
-                0x00800598                hallEffectMsgQ
- COMMON         0x0080059a        0x2 RTC/RTCTask.o
-                0x0080059a                rtcMsgQ
- COMMON         0x0080059c        0x6 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
-                0x0080059c                __iob
-                0x008005a2                PROVIDE (__bss_end, .)
-                0x00001730                __data_load_start = LOADADDR (.data)
-                0x00001778                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008005a4        0x2 Hall_Effect/HallEffectTask.o
+                0x008005a4                hallEffectMsgQ
+ COMMON         0x008005a6        0x2 LCD/LCDTask.o
+                0x008005a6                lcdMsgQ
+ COMMON         0x008005a8        0x2 RTC/RTCTask.o
+                0x008005a8                rtcMsgQ
+ COMMON         0x008005aa        0x2 WiFi/WiFiTask.o
+                0x008005aa                wifiMsgQ
+ COMMON         0x008005ac        0x6 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
+                0x008005ac                __iob
+                0x008005b2                PROVIDE (__bss_end, .)
+                0x000017e6                __data_load_start = LOADADDR (.data)
+                0x0000183a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008005a2        0x0
-                0x008005a2                PROVIDE (__noinit_start, .)
+.noinit         0x008005b2        0x0
+                0x008005b2                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008005a2                PROVIDE (__noinit_end, .)
-                0x008005a2                _end = .
-                0x008005a2                PROVIDE (__heap_start, .)
+                0x008005b2                PROVIDE (__noinit_end, .)
+                0x008005b2                _end = .
+                0x008005b2                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1450,6 +1486,7 @@ END GROUP
  *(.comment)
  .comment       0x00000000       0x30 Hall_Effect/HallEffectTask.o
                                  0x31 (size before relaxing)
+ .comment       0x00000000       0x31 LCD/LCDTask.o
  .comment       0x00000000       0x31 main.o
  .comment       0x00000000       0x31 RTC/RTCTask.o
  .comment       0x00000000       0x31 Source/list.o
@@ -1458,6 +1495,7 @@ END GROUP
  .comment       0x00000000       0x31 Source/queue.o
  .comment       0x00000000       0x31 Source/tasks.o
  .comment       0x00000000       0x31 uart/uart.o
+ .comment       0x00000000       0x31 WiFi/WiFiTask.o
  .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(iob.o)
  .comment       0x00000000       0x31 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(printf.o)
  .comment       0x00000030       0x2c c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
@@ -1479,110 +1517,128 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x340
+.debug_aranges  0x00000000      0x380
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 Hall_Effect/HallEffectTask.o
  .debug_aranges
-                0x00000020       0x20 main.o
+                0x00000020       0x20 LCD/LCDTask.o
  .debug_aranges
-                0x00000040       0x20 RTC/RTCTask.o
+                0x00000040       0x20 main.o
  .debug_aranges
-                0x00000060       0x40 Source/list.o
+                0x00000060       0x20 RTC/RTCTask.o
  .debug_aranges
-                0x000000a0       0x48 Source/portable/ATMega323/port.o
+                0x00000080       0x40 Source/list.o
  .debug_aranges
-                0x000000e8       0x38 Source/portable/MemMang/heap_1.o
+                0x000000c0       0x48 Source/portable/ATMega323/port.o
  .debug_aranges
-                0x00000120       0xc0 Source/queue.o
+                0x00000108       0x38 Source/portable/MemMang/heap_1.o
  .debug_aranges
-                0x000001e0      0x130 Source/tasks.o
+                0x00000140       0xc0 Source/queue.o
  .debug_aranges
-                0x00000310       0x30 uart/uart.o
+                0x00000200      0x130 Source/tasks.o
+ .debug_aranges
+                0x00000330       0x30 uart/uart.o
+ .debug_aranges
+                0x00000360       0x20 WiFi/WiFiTask.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3f48
+.debug_info     0x00000000     0x4394
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x1a7 Hall_Effect/HallEffectTask.o
- .debug_info    0x000001a7      0x434 main.o
- .debug_info    0x000005db      0x1ea RTC/RTCTask.o
- .debug_info    0x000007c5      0x2c6 Source/list.o
- .debug_info    0x00000a8b      0x261 Source/portable/ATMega323/port.o
- .debug_info    0x00000cec      0x1ad Source/portable/MemMang/heap_1.o
- .debug_info    0x00000e99     0x127e Source/queue.o
- .debug_info    0x00002117     0x1c56 Source/tasks.o
- .debug_info    0x00003d6d      0x1db uart/uart.o
+ .debug_info    0x000001a7      0x1cf LCD/LCDTask.o
+ .debug_info    0x00000376      0x53a main.o
+ .debug_info    0x000008b0      0x1ea RTC/RTCTask.o
+ .debug_info    0x00000a9a      0x2c6 Source/list.o
+ .debug_info    0x00000d60      0x261 Source/portable/ATMega323/port.o
+ .debug_info    0x00000fc1      0x1ad Source/portable/MemMang/heap_1.o
+ .debug_info    0x0000116e     0x127e Source/queue.o
+ .debug_info    0x000023ec     0x1c56 Source/tasks.o
+ .debug_info    0x00004042      0x1db uart/uart.o
+ .debug_info    0x0000421d      0x177 WiFi/WiFiTask.o
 
-.debug_abbrev   0x00000000      0xe23
+.debug_abbrev   0x00000000     0x1034
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x11c Hall_Effect/HallEffectTask.o
- .debug_abbrev  0x0000011c      0x170 main.o
- .debug_abbrev  0x0000028c       0xfb RTC/RTCTask.o
- .debug_abbrev  0x00000387       0xf8 Source/list.o
- .debug_abbrev  0x0000047f      0x167 Source/portable/ATMega323/port.o
- .debug_abbrev  0x000005e6      0x12e Source/portable/MemMang/heap_1.o
- .debug_abbrev  0x00000714      0x2b5 Source/queue.o
- .debug_abbrev  0x000009c9      0x331 Source/tasks.o
- .debug_abbrev  0x00000cfa      0x129 uart/uart.o
+ .debug_abbrev  0x0000011c      0x125 LCD/LCDTask.o
+ .debug_abbrev  0x00000241      0x170 main.o
+ .debug_abbrev  0x000003b1       0xfb RTC/RTCTask.o
+ .debug_abbrev  0x000004ac       0xf8 Source/list.o
+ .debug_abbrev  0x000005a4      0x167 Source/portable/ATMega323/port.o
+ .debug_abbrev  0x0000070b      0x12e Source/portable/MemMang/heap_1.o
+ .debug_abbrev  0x00000839      0x2b5 Source/queue.o
+ .debug_abbrev  0x00000aee      0x331 Source/tasks.o
+ .debug_abbrev  0x00000e1f      0x129 uart/uart.o
+ .debug_abbrev  0x00000f48       0xec WiFi/WiFiTask.o
 
-.debug_line     0x00000000     0x16b6
+.debug_line     0x00000000     0x1929
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x14e Hall_Effect/HallEffectTask.o
- .debug_line    0x0000014e      0x175 main.o
- .debug_line    0x000002c3      0x11a RTC/RTCTask.o
- .debug_line    0x000003dd      0x171 Source/list.o
- .debug_line    0x0000054e      0x1f8 Source/portable/ATMega323/port.o
- .debug_line    0x00000746      0x20d Source/portable/MemMang/heap_1.o
- .debug_line    0x00000953      0x4e5 Source/queue.o
- .debug_line    0x00000e38      0x794 Source/tasks.o
- .debug_line    0x000015cc       0xea uart/uart.o
+ .debug_line    0x0000014e      0x12a LCD/LCDTask.o
+ .debug_line    0x00000278      0x19f main.o
+ .debug_line    0x00000417      0x11a RTC/RTCTask.o
+ .debug_line    0x00000531      0x171 Source/list.o
+ .debug_line    0x000006a2      0x1f8 Source/portable/ATMega323/port.o
+ .debug_line    0x0000089a      0x20d Source/portable/MemMang/heap_1.o
+ .debug_line    0x00000aa7      0x4e5 Source/queue.o
+ .debug_line    0x00000f8c      0x794 Source/tasks.o
+ .debug_line    0x00001720       0xea uart/uart.o
+ .debug_line    0x0000180a      0x11f WiFi/WiFiTask.o
 
-.debug_frame    0x00000000      0x9b0
+.debug_frame    0x00000000      0xa18
  *(.debug_frame)
  .debug_frame   0x00000000       0x34 Hall_Effect/HallEffectTask.o
- .debug_frame   0x00000034       0x48 main.o
- .debug_frame   0x0000007c       0x34 RTC/RTCTask.o
- .debug_frame   0x000000b0       0x88 Source/list.o
- .debug_frame   0x00000138       0x74 Source/portable/ATMega323/port.o
- .debug_frame   0x000001ac       0x60 Source/portable/MemMang/heap_1.o
- .debug_frame   0x0000020c      0x2ac Source/queue.o
- .debug_frame   0x000004b8      0x4ac Source/tasks.o
- .debug_frame   0x00000964       0x4c uart/uart.o
+ .debug_frame   0x00000034       0x34 LCD/LCDTask.o
+ .debug_frame   0x00000068       0x48 main.o
+ .debug_frame   0x000000b0       0x34 RTC/RTCTask.o
+ .debug_frame   0x000000e4       0x88 Source/list.o
+ .debug_frame   0x0000016c       0x74 Source/portable/ATMega323/port.o
+ .debug_frame   0x000001e0       0x60 Source/portable/MemMang/heap_1.o
+ .debug_frame   0x00000240      0x2ac Source/queue.o
+ .debug_frame   0x000004ec      0x4ac Source/tasks.o
+ .debug_frame   0x00000998       0x4c uart/uart.o
+ .debug_frame   0x000009e4       0x34 WiFi/WiFiTask.o
 
-.debug_str      0x00000000     0x121f
+.debug_str      0x00000000     0x1293
  *(.debug_str)
  .debug_str     0x00000000      0x1c8 Hall_Effect/HallEffectTask.o
                                 0x216 (size before relaxing)
- .debug_str     0x000001c8      0x11f main.o
-                                0x2a8 (size before relaxing)
- .debug_str     0x000002e7       0x56 RTC/RTCTask.o
+ .debug_str     0x000001c8       0x39 LCD/LCDTask.o
+                                0x1f1 (size before relaxing)
+ .debug_str     0x00000201      0x128 main.o
+                                0x2b9 (size before relaxing)
+ .debug_str     0x00000329       0x56 RTC/RTCTask.o
                                 0x217 (size before relaxing)
- .debug_str     0x0000033d      0x12e Source/list.o
+ .debug_str     0x0000037f      0x12e Source/list.o
                                 0x29a (size before relaxing)
- .debug_str     0x0000046b      0x109 Source/portable/ATMega323/port.o
+ .debug_str     0x000004ad      0x109 Source/portable/ATMega323/port.o
                                 0x2b0 (size before relaxing)
- .debug_str     0x00000574       0xc5 Source/portable/MemMang/heap_1.o
+ .debug_str     0x000005b6       0xc5 Source/portable/MemMang/heap_1.o
                                 0x230 (size before relaxing)
- .debug_str     0x00000639      0x45c Source/queue.o
+ .debug_str     0x0000067b      0x45c Source/queue.o
                                 0x737 (size before relaxing)
- .debug_str     0x00000a95      0x752 Source/tasks.o
+ .debug_str     0x00000ad7      0x752 Source/tasks.o
                                 0xc2e (size before relaxing)
- .debug_str     0x000011e7       0x38 uart/uart.o
+ .debug_str     0x00001229       0x38 uart/uart.o
                                 0x1af (size before relaxing)
+ .debug_str     0x00001261       0x32 WiFi/WiFiTask.o
+                                0x1ec (size before relaxing)
 
-.debug_loc      0x00000000     0x3ad3
+.debug_loc      0x00000000     0x3baf
  *(.debug_loc)
  .debug_loc     0x00000000       0x6e Hall_Effect/HallEffectTask.o
- .debug_loc     0x0000006e       0x70 main.o
- .debug_loc     0x000000de       0x6e RTC/RTCTask.o
- .debug_loc     0x0000014c      0x155 Source/list.o
- .debug_loc     0x000002a1      0x2ac Source/portable/ATMega323/port.o
- .debug_loc     0x0000054d       0xf1 Source/portable/MemMang/heap_1.o
- .debug_loc     0x0000063e     0x16c7 Source/queue.o
- .debug_loc     0x00001d05     0x1d10 Source/tasks.o
- .debug_loc     0x00003a15       0xbe uart/uart.o
+ .debug_loc     0x0000006e       0x6e LCD/LCDTask.o
+ .debug_loc     0x000000dc       0x70 main.o
+ .debug_loc     0x0000014c       0x6e RTC/RTCTask.o
+ .debug_loc     0x000001ba      0x155 Source/list.o
+ .debug_loc     0x0000030f      0x2ac Source/portable/ATMega323/port.o
+ .debug_loc     0x000005bb       0xf1 Source/portable/MemMang/heap_1.o
+ .debug_loc     0x000006ac     0x16c7 Source/queue.o
+ .debug_loc     0x00001d73     0x1d10 Source/tasks.o
+ .debug_loc     0x00003a83       0xbe uart/uart.o
+ .debug_loc     0x00003b41       0x6e WiFi/WiFiTask.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1602,17 +1658,19 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x2f8
+.debug_ranges   0x00000000      0x330
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 Hall_Effect/HallEffectTask.o
- .debug_ranges  0x00000010       0x10 main.o
- .debug_ranges  0x00000020       0x10 RTC/RTCTask.o
- .debug_ranges  0x00000030       0x30 Source/list.o
- .debug_ranges  0x00000060       0x38 Source/portable/ATMega323/port.o
- .debug_ranges  0x00000098       0x28 Source/portable/MemMang/heap_1.o
- .debug_ranges  0x000000c0       0xb0 Source/queue.o
- .debug_ranges  0x00000170      0x168 Source/tasks.o
- .debug_ranges  0x000002d8       0x20 uart/uart.o
+ .debug_ranges  0x00000010       0x28 LCD/LCDTask.o
+ .debug_ranges  0x00000038       0x10 main.o
+ .debug_ranges  0x00000048       0x10 RTC/RTCTask.o
+ .debug_ranges  0x00000058       0x30 Source/list.o
+ .debug_ranges  0x00000088       0x38 Source/portable/ATMega323/port.o
+ .debug_ranges  0x000000c0       0x28 Source/portable/MemMang/heap_1.o
+ .debug_ranges  0x000000e8       0xb0 Source/queue.o
+ .debug_ranges  0x00000198      0x168 Source/tasks.o
+ .debug_ranges  0x00000300       0x20 uart/uart.o
+ .debug_ranges  0x00000320       0x10 WiFi/WiFiTask.o
 
 .debug_macro
  *(.debug_macro)

@@ -1,0 +1,1 @@
+LCD/LCD.d LCD/LCD.o: ../LCD/LCD.c

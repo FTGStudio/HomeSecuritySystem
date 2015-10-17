@@ -15,6 +15,8 @@
 #include "I2C/I2C.h"
 #include "RTC/RTC.h"
 #include "Hall_Effect/Hall_Effect.h"
+#include "LCD/LCD.h"
+#include "WiFi/WiFi.h"
 #include "uart/uart.h"
 
 #define F_CPU						8000000
@@ -33,8 +35,13 @@ int main(void)
 	
 	hallEffectMsgQ = xQueueCreate(2, sizeof(HallEffectMsg_t));
 	rtcMsgQ = xQueueCreate(2, sizeof(RTCMsg_t));
+	lcdMsgQ = xQueueCreate(2, sizeof(LCDMsg_t));
+	wifiMsgQ = xQueueCreate(2, sizeof(WiFiMsg_t));
 	
 	xTaskCreate( vRTCTask, ( signed char * ) "RTC", configMINIMAL_STACK_SIZE, NULL, 1, NULL );
 	xTaskCreate( vHallEffectTask, ( signed char * ) "HallEffect", configMINIMAL_STACK_SIZE, NULL, 1, NULL );
+	xTaskCreate( vLCDTask, ( signed char * ) "LCD", configMINIMAL_STACK_SIZE, NULL, 1, NULL );
+	xTaskCreate( vWifiTask, ( signed char * ) "WiFi", configMINIMAL_STACK_SIZE, NULL, 1, NULL );
+	
 	vTaskStartScheduler();
 }

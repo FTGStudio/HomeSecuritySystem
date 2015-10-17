@@ -24,6 +24,10 @@ Hall_Effect\Hall_Effect.c
 
 I2C\I2C.c
 
+LCD\LCD.c
+
+LCD\LCDTask.c
+
 main.c
 
 RTC\RTC.c
@@ -47,4 +51,8 @@ Source\tasks.c
 Source\timers.c
 
 uart\uart.c
+
+WiFi\WiFi.c
+
+WiFi\WiFiTask.c
 
