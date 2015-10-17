@@ -1,0 +1,150 @@
+\hypertarget{group___graphing}{}\section{Graphing}
+\label{group___graphing}\index{Graphing@{Graphing}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___graphing_ga7a09cd72618dd5d5619b6aaf6597a17f}{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)
+\item 
+void \hyperlink{group___graphing_ga1c4f2a2aa9c3d9710771d398d3cecb85}{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal\+\_\+no\+\_\+border} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)
+\item 
+void \hyperlink{group___graphing_gaadb6b8fa919155663d6261e9bf7c6c3a}{glcd\+\_\+bar\+\_\+graph\+\_\+vertical} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)
+\item 
+void \hyperlink{group___graphing_ga96387c9e9bb6c8212c6bcd55c78d35b1}{glcd\+\_\+bar\+\_\+graph\+\_\+vertical\+\_\+no\+\_\+border} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)
+\item 
+void \hyperlink{group___graphing_ga63f7a032ec9909b00d885e110dfc3845}{glcd\+\_\+scrolling\+\_\+bar\+\_\+graph} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions for graphing, e.\+g drawing bar graphs etc. 
+
+\subsection{Function Documentation}
+\hypertarget{group___graphing_ga7a09cd72618dd5d5619b6aaf6597a17f}{}\index{Graphing@{Graphing}!glcd\+\_\+bar\+\_\+graph\+\_\+horizontal@{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal}}
+\index{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal@{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal}!Graphing@{Graphing}}
+\subsubsection[{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+bar\+\_\+graph\+\_\+horizontal (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{width, }
+\item[{uint8\+\_\+t}]{height, }
+\item[{uint8\+\_\+t}]{val}
+\end{DoxyParamCaption}
+)}\label{group___graphing_ga7a09cd72618dd5d5619b6aaf6597a17f}
+Draw horizontal bar graph with 1 px wide border. The bar graph draws from left to right as val increases. 
+\begin{DoxyParams}{Parameters}
+{\em x} & x location for top-\/left of border \\
+\hline
+{\em y} & y location for top-\/left of border \\
+\hline
+{\em width} & width of the border \\
+\hline
+{\em height} & height of the border (must be over 2) \\
+\hline
+{\em val} & value to display in graph (0-\/255 8 bit value). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file graphs.\+c.
+
+\hypertarget{group___graphing_ga1c4f2a2aa9c3d9710771d398d3cecb85}{}\index{Graphing@{Graphing}!glcd\+\_\+bar\+\_\+graph\+\_\+horizontal\+\_\+no\+\_\+border@{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal\+\_\+no\+\_\+border}}
+\index{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal\+\_\+no\+\_\+border@{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal\+\_\+no\+\_\+border}!Graphing@{Graphing}}
+\subsubsection[{glcd\+\_\+bar\+\_\+graph\+\_\+horizontal\+\_\+no\+\_\+border(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+bar\+\_\+graph\+\_\+horizontal\+\_\+no\+\_\+border (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{width, }
+\item[{uint8\+\_\+t}]{height, }
+\item[{uint8\+\_\+t}]{val}
+\end{DoxyParamCaption}
+)}\label{group___graphing_ga1c4f2a2aa9c3d9710771d398d3cecb85}
+Draw horizontal bar graph with no border. The bar graph draws from left to right as val increases. 
+\begin{DoxyParams}{Parameters}
+{\em x} & x location for top-\/left of bar \\
+\hline
+{\em y} & y location for top-\/left of bar \\
+\hline
+{\em width} & width of the bar at full val \\
+\hline
+{\em height} & height of the bar \\
+\hline
+{\em val} & value to display in graph (0-\/255 8 bit value). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file graphs.\+c.
+
+\hypertarget{group___graphing_gaadb6b8fa919155663d6261e9bf7c6c3a}{}\index{Graphing@{Graphing}!glcd\+\_\+bar\+\_\+graph\+\_\+vertical@{glcd\+\_\+bar\+\_\+graph\+\_\+vertical}}
+\index{glcd\+\_\+bar\+\_\+graph\+\_\+vertical@{glcd\+\_\+bar\+\_\+graph\+\_\+vertical}!Graphing@{Graphing}}
+\subsubsection[{glcd\+\_\+bar\+\_\+graph\+\_\+vertical(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+bar\+\_\+graph\+\_\+vertical (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{width, }
+\item[{uint8\+\_\+t}]{height, }
+\item[{uint8\+\_\+t}]{val}
+\end{DoxyParamCaption}
+)}\label{group___graphing_gaadb6b8fa919155663d6261e9bf7c6c3a}
+Draw vertical bar graph with 1px wide border. The bar graph draws from bottom to top as val increases. 
+\begin{DoxyParams}{Parameters}
+{\em x} & x location for top-\/left of border \\
+\hline
+{\em y} & y location for top-\/left of border \\
+\hline
+{\em width} & width of the border \\
+\hline
+{\em height} & height of the border \\
+\hline
+{\em val} & value to display in graph (0-\/255 8 bit value). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file graphs.\+c.
+
+\hypertarget{group___graphing_ga96387c9e9bb6c8212c6bcd55c78d35b1}{}\index{Graphing@{Graphing}!glcd\+\_\+bar\+\_\+graph\+\_\+vertical\+\_\+no\+\_\+border@{glcd\+\_\+bar\+\_\+graph\+\_\+vertical\+\_\+no\+\_\+border}}
+\index{glcd\+\_\+bar\+\_\+graph\+\_\+vertical\+\_\+no\+\_\+border@{glcd\+\_\+bar\+\_\+graph\+\_\+vertical\+\_\+no\+\_\+border}!Graphing@{Graphing}}
+\subsubsection[{glcd\+\_\+bar\+\_\+graph\+\_\+vertical\+\_\+no\+\_\+border(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+bar\+\_\+graph\+\_\+vertical\+\_\+no\+\_\+border (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{width, }
+\item[{uint8\+\_\+t}]{height, }
+\item[{uint8\+\_\+t}]{val}
+\end{DoxyParamCaption}
+)}\label{group___graphing_ga96387c9e9bb6c8212c6bcd55c78d35b1}
+Draw vertical bar graph with no border. The bar graph draws from bottom to top as val increases. 
+\begin{DoxyParams}{Parameters}
+{\em x} & x location for top-\/left of bar \\
+\hline
+{\em y} & y location for top-\/left of bar \\
+\hline
+{\em width} & width of the bar \\
+\hline
+{\em height} & height of the bar \\
+\hline
+{\em val} & value to display in graph (0-\/255 8 bit value). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file graphs.\+c.
+
+\hypertarget{group___graphing_ga63f7a032ec9909b00d885e110dfc3845}{}\index{Graphing@{Graphing}!glcd\+\_\+scrolling\+\_\+bar\+\_\+graph@{glcd\+\_\+scrolling\+\_\+bar\+\_\+graph}}
+\index{glcd\+\_\+scrolling\+\_\+bar\+\_\+graph@{glcd\+\_\+scrolling\+\_\+bar\+\_\+graph}!Graphing@{Graphing}}
+\subsubsection[{glcd\+\_\+scrolling\+\_\+bar\+\_\+graph(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t width, uint8\+\_\+t height, uint8\+\_\+t val)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+scrolling\+\_\+bar\+\_\+graph (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{width, }
+\item[{uint8\+\_\+t}]{height, }
+\item[{uint8\+\_\+t}]{val}
+\end{DoxyParamCaption}
+)}\label{group___graphing_ga63f7a032ec9909b00d885e110dfc3845}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]write doc \end{DoxyRefDesc}
+
+
+Definition at line 67 of file graphs.\+c.
+

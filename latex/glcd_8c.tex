@@ -1,0 +1,204 @@
+\hypertarget{glcd_8c}{}\section{glcd/glcd.c File Reference}
+\label{glcd_8c}\index{glcd/glcd.\+c@{glcd/glcd.\+c}}
+
+
+Basic G\+L\+C\+D functions affecting bounding box manipulation, clearing of screen and buffers, and basic scroll functions.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}glcd.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{glcd_8c_a88d99b78977e27adbfccdca89e3780d7}{glcd\+\_\+update\+\_\+bbox} (uint8\+\_\+t xmin, uint8\+\_\+t ymin, uint8\+\_\+t xmax, uint8\+\_\+t ymax)
+\item 
+void \hyperlink{glcd_8c_a00575cabf3fdaefdf075ae954211bb44}{glcd\+\_\+reset\+\_\+bbox} ()
+\item 
+void \hyperlink{glcd_8c_a1e2f1dcac13811ffc0cf9b234497a00d}{glcd\+\_\+bbox\+\_\+reset} ()
+\item 
+void \hyperlink{glcd_8c_a6590d9f8c806245e7f813374e90c5de7}{glcd\+\_\+bbox\+\_\+refresh} ()
+\item 
+void \hyperlink{glcd_8c_a5ea60d26d86e2677589904eb81d42f64}{glcd\+\_\+clear} (void)
+\item 
+void \hyperlink{glcd_8c_af2b3e594ac0e4a182d08b47848bd927b}{glcd\+\_\+clear\+\_\+buffer} (void)
+\item 
+void \hyperlink{glcd_8c_a70216254fa510853189338fd7d056837}{glcd\+\_\+select\+\_\+screen} (uint8\+\_\+t $\ast$buffer, \hyperlink{structglcd___bounding_box__t}{glcd\+\_\+\+Bounding\+Box\+\_\+t} $\ast$bbox)
+\item 
+void \hyperlink{glcd_8c_a18ef1c74168085856e9c4b39799e7b05}{glcd\+\_\+scroll} (int8\+\_\+t x, int8\+\_\+t y)
+\item 
+void \hyperlink{glcd_8c_ac3da3dd20107a7cf291eee5d2d11a516}{glcd\+\_\+scroll\+\_\+line} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{group___global_vars_ga889ec8484defa014e3d9f22f576c7083}{glcd\+\_\+buffer} \mbox{[}\hyperlink{glcd_8h_af98ee97c3e6460df86a694d31631e552}{G\+L\+C\+D\+\_\+\+L\+C\+D\+\_\+\+W\+I\+D\+T\+H} $\ast$\hyperlink{glcd_8h_a1345d21edd852dc1028efdd8035852b2}{G\+L\+C\+D\+\_\+\+L\+C\+D\+\_\+\+H\+E\+I\+G\+H\+T}/8\mbox{]}
+\item 
+\hyperlink{structglcd___bounding_box__t}{glcd\+\_\+\+Bounding\+Box\+\_\+t} \hyperlink{group___global_vars_gab7e1550f016f4251d15452cc4775d4e9}{glcd\+\_\+bbox}
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{group___global_vars_ga8c28e20f1f4105bea86f28bf9db61059}{glcd\+\_\+buffer\+\_\+selected}
+\item 
+\hyperlink{structglcd___bounding_box__t}{glcd\+\_\+\+Bounding\+Box\+\_\+t} $\ast$ \hyperlink{group___global_vars_ga03b7bab8dce1a74310e1de15e1b7cb36}{glcd\+\_\+bbox\+\_\+selected}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic G\+L\+C\+D functions affecting bounding box manipulation, clearing of screen and buffers, and basic scroll functions. 
+
+\begin{DoxyAuthor}{Author}
+Andy Gock 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{glcd_8c_a6590d9f8c806245e7f813374e90c5de7}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+bbox\+\_\+refresh@{glcd\+\_\+bbox\+\_\+refresh}}
+\index{glcd\+\_\+bbox\+\_\+refresh@{glcd\+\_\+bbox\+\_\+refresh}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+bbox\+\_\+refresh()}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+bbox\+\_\+refresh (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_a6590d9f8c806245e7f813374e90c5de7}
+Marks the entire display for re-\/writing. 
+
+Definition at line 114 of file glcd.\+c.
+
+\hypertarget{glcd_8c_a1e2f1dcac13811ffc0cf9b234497a00d}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+bbox\+\_\+reset@{glcd\+\_\+bbox\+\_\+reset}}
+\index{glcd\+\_\+bbox\+\_\+reset@{glcd\+\_\+bbox\+\_\+reset}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+bbox\+\_\+reset()}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+bbox\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_a1e2f1dcac13811ffc0cf9b234497a00d}
+Same as \hyperlink{glcd_8h_a3c4c31a601e3b295338cbefa56913214}{glcd\+\_\+reset\+\_\+bbox()} 
+
+Definition at line 110 of file glcd.\+c.
+
+\hypertarget{glcd_8c_a5ea60d26d86e2677589904eb81d42f64}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+clear@{glcd\+\_\+clear}}
+\index{glcd\+\_\+clear@{glcd\+\_\+clear}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+clear(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_a5ea60d26d86e2677589904eb81d42f64}
+Clear the display. This will clear the buffer and physically write and commit it to the L\+C\+D 
+
+Definition at line 122 of file glcd.\+c.
+
+\hypertarget{glcd_8c_af2b3e594ac0e4a182d08b47848bd927b}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+clear\+\_\+buffer@{glcd\+\_\+clear\+\_\+buffer}}
+\index{glcd\+\_\+clear\+\_\+buffer@{glcd\+\_\+clear\+\_\+buffer}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+clear\+\_\+buffer(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+clear\+\_\+buffer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_af2b3e594ac0e4a182d08b47848bd927b}
+Clear the display buffer only. This does not physically write the changes to the L\+C\+D 
+
+Definition at line 128 of file glcd.\+c.
+
+\hypertarget{glcd_8c_a00575cabf3fdaefdf075ae954211bb44}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+reset\+\_\+bbox@{glcd\+\_\+reset\+\_\+bbox}}
+\index{glcd\+\_\+reset\+\_\+bbox@{glcd\+\_\+reset\+\_\+bbox}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+reset\+\_\+bbox()}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+reset\+\_\+bbox (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_a00575cabf3fdaefdf075ae954211bb44}
+Reset the bounding box. After resetting the bounding box, no pixels are marked as needing refreshing. 
+
+Definition at line 101 of file glcd.\+c.
+
+\hypertarget{glcd_8c_a18ef1c74168085856e9c4b39799e7b05}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+scroll@{glcd\+\_\+scroll}}
+\index{glcd\+\_\+scroll@{glcd\+\_\+scroll}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+scroll(int8\+\_\+t x, int8\+\_\+t y)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+scroll (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{x, }
+\item[{int8\+\_\+t}]{y}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_a18ef1c74168085856e9c4b39799e7b05}
+Scroll entire screne buffer by x and y pixels. (not implemented yet) \begin{DoxyNote}{Note}
+Items scrolled off the extents of the display dimensions will be lost.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X distance to scroll \\
+\hline
+{\em y} & Y distance to scroll \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]Skeleton \end{DoxyRefDesc}
+
+
+Definition at line 139 of file glcd.\+c.
+
+\hypertarget{glcd_8c_ac3da3dd20107a7cf291eee5d2d11a516}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+scroll\+\_\+line@{glcd\+\_\+scroll\+\_\+line}}
+\index{glcd\+\_\+scroll\+\_\+line@{glcd\+\_\+scroll\+\_\+line}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+scroll\+\_\+line(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+scroll\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_ac3da3dd20107a7cf291eee5d2d11a516}
+Scroll screen buffer up by 8 pixels. This is designed to be used in conjunciton with tiny text functions which are 8 bits high. \begin{DoxySeeAlso}{See also}
+Tiny \hyperlink{group___text}{Text} 
+\end{DoxySeeAlso}
+
+
+Definition at line 153 of file glcd.\+c.
+
+\hypertarget{glcd_8c_a70216254fa510853189338fd7d056837}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+select\+\_\+screen@{glcd\+\_\+select\+\_\+screen}}
+\index{glcd\+\_\+select\+\_\+screen@{glcd\+\_\+select\+\_\+screen}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+select\+\_\+screen(uint8\+\_\+t $\ast$buffer, glcd\+\_\+\+Bounding\+Box\+\_\+t $\ast$bbox)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+select\+\_\+screen (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{{\bf glcd\+\_\+\+Bounding\+Box\+\_\+t} $\ast$}]{bbox}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_a70216254fa510853189338fd7d056837}
+Select screen buffer and bounding box structure. This should be selected at initialisation. There are future plans to support multiple screen buffers but this not yet available. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Pointer to screen buffer \\
+\hline
+{\em bbox} & Pointer to bounding box object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structglcd___bounding_box__t}{glcd\+\_\+\+Bounding\+Box\+\_\+t} 
+\end{DoxySeeAlso}
+
+
+Definition at line 133 of file glcd.\+c.
+
+\hypertarget{glcd_8c_a88d99b78977e27adbfccdca89e3780d7}{}\index{glcd.\+c@{glcd.\+c}!glcd\+\_\+update\+\_\+bbox@{glcd\+\_\+update\+\_\+bbox}}
+\index{glcd\+\_\+update\+\_\+bbox@{glcd\+\_\+update\+\_\+bbox}!glcd.\+c@{glcd.\+c}}
+\subsubsection[{glcd\+\_\+update\+\_\+bbox(uint8\+\_\+t xmin, uint8\+\_\+t ymin, uint8\+\_\+t xmax, uint8\+\_\+t ymax)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+update\+\_\+bbox (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{xmin, }
+\item[{uint8\+\_\+t}]{ymin, }
+\item[{uint8\+\_\+t}]{xmax, }
+\item[{uint8\+\_\+t}]{ymax}
+\end{DoxyParamCaption}
+)}\label{glcd_8c_a88d99b78977e27adbfccdca89e3780d7}
+Update bounding box.
+
+The bounding box defines a rectangle in which needs to be refreshed next time \hyperlink{group___controllers_ga0df6c0642fff31b764298958eda56efb}{glcd\+\_\+write()} is called. \hyperlink{group___controllers_ga0df6c0642fff31b764298958eda56efb}{glcd\+\_\+write()} only writes to those pixels inside the bounding box plus any surrounding pixels which are required according to the bank/column write method of the controller.
+
+Define a rectangle here, and it will be {\itshape added} to the existing bounding box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xmin} & Minimum x value of rectangle \\
+\hline
+{\em ymin} & Minimum y value of rectangle \\
+\hline
+{\em xmax} & Maximum x value of rectangle \\
+\hline
+{\em ymax} & Maximum y value of rectangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group___global_vars_gab7e1550f016f4251d15452cc4775d4e9}{glcd\+\_\+bbox} 
+
+\hyperlink{group___global_vars_ga03b7bab8dce1a74310e1de15e1b7cb36}{glcd\+\_\+bbox\+\_\+selected} 
+\end{DoxySeeAlso}
+
+
+Definition at line 69 of file glcd.\+c.
+

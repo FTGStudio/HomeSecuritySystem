@@ -1,0 +1,132 @@
+\hypertarget{group___controllers}{}\section{Controllers}
+\label{group___controllers}\index{Controllers@{Controllers}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___controllers_ga5b72b58ca45f76a55d3c3f38efc87eb8}{glcd\+\_\+command} (uint8\+\_\+t c)
+\item 
+void \hyperlink{group___controllers_gaba6b8ce5d4afaec0071f05f9c3510db6}{glcd\+\_\+data} (uint8\+\_\+t c)
+\item 
+void \hyperlink{group___controllers_gac206e5a35afe3ca28bb2ba3101484da8}{glcd\+\_\+set\+\_\+contrast} (uint8\+\_\+t val)
+\item 
+void \hyperlink{group___controllers_ga1a8994c3da4518c34e240971a37bfe9d}{glcd\+\_\+power\+\_\+down} (void)
+\item 
+void \hyperlink{group___controllers_ga496be0117727a0a2b86054932d85c209}{glcd\+\_\+power\+\_\+up} (void)
+\item 
+void \hyperlink{group___controllers_ga36434245ca7c131a775d7a6ba0cf587b}{glcd\+\_\+set\+\_\+y\+\_\+address} (uint8\+\_\+t y)
+\item 
+void \hyperlink{group___controllers_ga1fbdc5e57b13611a632dee191a56d772}{glcd\+\_\+set\+\_\+x\+\_\+address} (uint8\+\_\+t x)
+\item 
+void \hyperlink{group___controllers_ga0df6c0642fff31b764298958eda56efb}{glcd\+\_\+write} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controller specific functions.
+
+Currently only the following controllers are supported\+:
+\begin{DoxyItemize}
+\item P\+C\+D8544 (Nokia 5110 L\+C\+D) S\+P\+I interface
+\item S\+T7565\+R with S\+P\+I interface
+\end{DoxyItemize}
+
+The C and header files defining these functions are stored in the subdirectory\+: \begin{DoxyVerb}devices/\end{DoxyVerb}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___controllers_ga5b72b58ca45f76a55d3c3f38efc87eb8}{}\index{Controllers@{Controllers}!glcd\+\_\+command@{glcd\+\_\+command}}
+\index{glcd\+\_\+command@{glcd\+\_\+command}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+command(uint8\+\_\+t c)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+command (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{c}
+\end{DoxyParamCaption}
+)}\label{group___controllers_ga5b72b58ca45f76a55d3c3f38efc87eb8}
+Send command byte to L\+C\+D. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Command byte to be written to L\+C\+D \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___controllers_gaba6b8ce5d4afaec0071f05f9c3510db6}{}\index{Controllers@{Controllers}!glcd\+\_\+data@{glcd\+\_\+data}}
+\index{glcd\+\_\+data@{glcd\+\_\+data}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+data(uint8\+\_\+t c)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{c}
+\end{DoxyParamCaption}
+)}\label{group___controllers_gaba6b8ce5d4afaec0071f05f9c3510db6}
+Send data byte to L\+C\+D. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Data byte to be written to L\+C\+D \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___controllers_ga1a8994c3da4518c34e240971a37bfe9d}{}\index{Controllers@{Controllers}!glcd\+\_\+power\+\_\+down@{glcd\+\_\+power\+\_\+down}}
+\index{glcd\+\_\+power\+\_\+down@{glcd\+\_\+power\+\_\+down}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+power\+\_\+down(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+power\+\_\+down (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group___controllers_ga1a8994c3da4518c34e240971a37bfe9d}
+Power down the device. \hypertarget{group___controllers_ga496be0117727a0a2b86054932d85c209}{}\index{Controllers@{Controllers}!glcd\+\_\+power\+\_\+up@{glcd\+\_\+power\+\_\+up}}
+\index{glcd\+\_\+power\+\_\+up@{glcd\+\_\+power\+\_\+up}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+power\+\_\+up(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+power\+\_\+up (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group___controllers_ga496be0117727a0a2b86054932d85c209}
+Power up the device. \hypertarget{group___controllers_gac206e5a35afe3ca28bb2ba3101484da8}{}\index{Controllers@{Controllers}!glcd\+\_\+set\+\_\+contrast@{glcd\+\_\+set\+\_\+contrast}}
+\index{glcd\+\_\+set\+\_\+contrast@{glcd\+\_\+set\+\_\+contrast}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+set\+\_\+contrast(uint8\+\_\+t val)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+set\+\_\+contrast (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{val}
+\end{DoxyParamCaption}
+)}\label{group___controllers_gac206e5a35afe3ca28bb2ba3101484da8}
+Set contrast. 
+\begin{DoxyParams}{Parameters}
+{\em val} & Value from 0 to 127. This should be experimentally determined. Supported by P\+C\+D8544 only. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___controllers_ga1fbdc5e57b13611a632dee191a56d772}{}\index{Controllers@{Controllers}!glcd\+\_\+set\+\_\+x\+\_\+address@{glcd\+\_\+set\+\_\+x\+\_\+address}}
+\index{glcd\+\_\+set\+\_\+x\+\_\+address@{glcd\+\_\+set\+\_\+x\+\_\+address}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+set\+\_\+x\+\_\+address(uint8\+\_\+t x)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+set\+\_\+x\+\_\+address (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)}\label{group___controllers_ga1fbdc5e57b13611a632dee191a56d772}
+Set X address of R\+A\+M (column). Device must be under basic instruction set mode before using this. 
+\begin{DoxyParams}{Parameters}
+{\em x} & X address of R\+A\+M (0 $<$= X $<$= G\+L\+C\+D\+\_\+\+L\+C\+D\+\_\+\+W\+I\+D\+T\+H-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{glcd_8h_af98ee97c3e6460df86a694d31631e552}{G\+L\+C\+D\+\_\+\+L\+C\+D\+\_\+\+W\+I\+D\+T\+H} 
+\end{DoxySeeAlso}
+\hypertarget{group___controllers_ga36434245ca7c131a775d7a6ba0cf587b}{}\index{Controllers@{Controllers}!glcd\+\_\+set\+\_\+y\+\_\+address@{glcd\+\_\+set\+\_\+y\+\_\+address}}
+\index{glcd\+\_\+set\+\_\+y\+\_\+address@{glcd\+\_\+set\+\_\+y\+\_\+address}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+set\+\_\+y\+\_\+address(uint8\+\_\+t y)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+set\+\_\+y\+\_\+address (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{y}
+\end{DoxyParamCaption}
+)}\label{group___controllers_ga36434245ca7c131a775d7a6ba0cf587b}
+Set Y address of R\+A\+M (select bank).
+\begin{DoxyItemize}
+\item for P\+C\+D8544, device must be under basic instruction set mode before using this. 
+\begin{DoxyParams}{Parameters}
+{\em y} & page address of R\+A\+M (0 $<$= Y $<$ G\+L\+C\+D\+\_\+\+L\+C\+D\+\_\+\+H\+E\+I\+G\+H\+T/8) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{glcd_8h_a1345d21edd852dc1028efdd8035852b2}{G\+L\+C\+D\+\_\+\+L\+C\+D\+\_\+\+H\+E\+I\+G\+H\+T} 
+
+G\+L\+C\+D\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+A\+N\+K\+S
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Update\+: {\ttfamily y} is actually bank number, not pixel number! 
+\end{DoxyNote}
+
+\end{DoxyItemize}\hypertarget{group___controllers_ga0df6c0642fff31b764298958eda56efb}{}\index{Controllers@{Controllers}!glcd\+\_\+write@{glcd\+\_\+write}}
+\index{glcd\+\_\+write@{glcd\+\_\+write}!Controllers@{Controllers}}
+\subsubsection[{glcd\+\_\+write(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group___controllers_ga0df6c0642fff31b764298958eda56efb}
+Update the display within the specified bounding box. This physically writes data to the device\textquotesingle{}s R\+A\+M. 

@@ -1,0 +1,252 @@
+\hypertarget{group___tiny_text}{}\section{Tiny Text}
+\label{group___tiny_text}\index{Tiny Text@{Tiny Text}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___tiny_text_ga9ea14415ac02bc0ddb4cd0fc89084a35}{G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T}()~\hyperlink{group___tiny_text_ga8df82f7f6d616587f2c5ca55ac9f72fa}{glcd\+\_\+tiny\+\_\+set\+\_\+font}(Font5x7,5,7,32,127);
+\item 
+\#define \hyperlink{group___tiny_text_ga90afbd21697b61f33dcb1043ce91a164}{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E}(str)  ~\hyperlink{group___tiny_text_gafc083b51f666e69c1e40e1b90f80797f}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend}(str)
+\item 
+\#define \hyperlink{group___tiny_text_gab4d98419566ec857011ac6f1d3175437}{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P}(str)~\hyperlink{group___tiny_text_ga396ad980cf754dc4db4746d7684e3630}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P}(str)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___tiny_text_ga8df82f7f6d616587f2c5ca55ac9f72fa}{glcd\+\_\+tiny\+\_\+set\+\_\+font} (const char $\ast$font\+\_\+table, uint8\+\_\+t width, uint8\+\_\+t height, char start\+\_\+char, char end\+\_\+char)
+\item 
+void \hyperlink{group___tiny_text_ga5ba33d2c7a7bd5c397963f0d0dffd628}{glcd\+\_\+tiny\+\_\+draw\+\_\+char} (uint8\+\_\+t x, uint8\+\_\+t line, char c)
+\item 
+void \hyperlink{group___tiny_text_ga679994954873b92bd139deff9e0bbb26}{glcd\+\_\+tiny\+\_\+draw\+\_\+string} (uint8\+\_\+t x, uint8\+\_\+t line, char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_gade30aed750a83809464e75feff501da9}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P} (uint8\+\_\+t x, uint8\+\_\+t line, const char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_gafc083b51f666e69c1e40e1b90f80797f}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend} (char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_ga396ad980cf754dc4db4746d7684e3630}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P} (const char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_gaf76035b880aa7c2a4def39e54c990fd6}{glcd\+\_\+tiny\+\_\+invert\+\_\+line} (uint8\+\_\+t line)
+\item 
+void \hyperlink{group___tiny_text_ga756fd3e5bc5206a45bc6bda7ecd0356f}{glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy} (uint8\+\_\+t x, uint8\+\_\+t y, char c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions relating to using tiny 5x7 text fonts.
+
+Tiny text functions are usually used on a line by line basis. Each line being 8 bits high. Characters start on the top most bit and are 7 bits high, leaving a one bit space underneath. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group___tiny_text_ga9ea14415ac02bc0ddb4cd0fc89084a35}{}\index{Tiny Text@{Tiny Text}!G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T@{G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T}}
+\index{G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T@{G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T}!Tiny Text@{Tiny Text}}
+\subsubsection[{G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf glcd\+\_\+tiny\+\_\+set\+\_\+font}(Font5x7,5,7,32,127);}\label{group___tiny_text_ga9ea14415ac02bc0ddb4cd0fc89084a35}
+Initialise 5x7 text 
+
+Definition at line 126 of file glcd\+\_\+text\+\_\+tiny.\+h.
+
+\hypertarget{group___tiny_text_ga90afbd21697b61f33dcb1043ce91a164}{}\index{Tiny Text@{Tiny Text}!G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E@{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E}}
+\index{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E@{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E}!Tiny Text@{Tiny Text}}
+\subsubsection[{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend}(str)}\label{group___tiny_text_ga90afbd21697b61f33dcb1043ce91a164}
+Write string to bottom-\/most line after scrolling everything else up 
+
+Definition at line 129 of file glcd\+\_\+text\+\_\+tiny.\+h.
+
+\hypertarget{group___tiny_text_gab4d98419566ec857011ac6f1d3175437}{}\index{Tiny Text@{Tiny Text}!G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P@{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P}}
+\index{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P@{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P}!Tiny Text@{Tiny Text}}
+\subsubsection[{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P}(str)}\label{group___tiny_text_gab4d98419566ec857011ac6f1d3175437}
+Write string from program memory to bottom-\/most line after scrolling everything else up 
+
+Definition at line 132 of file glcd\+\_\+text\+\_\+tiny.\+h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group___tiny_text_ga5ba33d2c7a7bd5c397963f0d0dffd628}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+draw\+\_\+char@{glcd\+\_\+tiny\+\_\+draw\+\_\+char}}
+\index{glcd\+\_\+tiny\+\_\+draw\+\_\+char@{glcd\+\_\+tiny\+\_\+draw\+\_\+char}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+draw\+\_\+char(uint8\+\_\+t x, uint8\+\_\+t line, char c)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+draw\+\_\+char (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{line, }
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_ga5ba33d2c7a7bd5c397963f0d0dffd628}
+Write character to L\+C\+D in tiny 5x7 font. 
+\begin{DoxyParams}{Parameters}
+{\em x} & column position to start \\
+\hline
+{\em line} & line number to be written (each line is 8 pixels high) \\
+\hline
+{\em c} & char to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file text\+\_\+tiny.\+c.
+
+\hypertarget{group___tiny_text_ga756fd3e5bc5206a45bc6bda7ecd0356f}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy@{glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy}}
+\index{glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy@{glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy(uint8\+\_\+t x, uint8\+\_\+t y, char c)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_ga756fd3e5bc5206a45bc6bda7ecd0356f}
+Write character to L\+C\+D in tiny 5x7 font to specified X, Y location. If position is aligned with 8 bit line heights, use \hyperlink{group___tiny_text_ga5ba33d2c7a7bd5c397963f0d0dffd628}{glcd\+\_\+tiny\+\_\+draw\+\_\+char()} instead as it will be faster.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & column position to start \\
+\hline
+{\em y} & row position to start (pixel based, not 8 bit high rows) \\
+\hline
+{\em c} & char to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group___tiny_text_ga5ba33d2c7a7bd5c397963f0d0dffd628}{glcd\+\_\+tiny\+\_\+draw\+\_\+char()} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+This does the same thing as \hyperlink{group___tiny_text_ga756fd3e5bc5206a45bc6bda7ecd0356f}{glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy()} but is limited to Stang format font tables. 
+\end{DoxyNote}
+
+
+Definition at line 145 of file text\+\_\+tiny.\+c.
+
+\hypertarget{group___tiny_text_ga679994954873b92bd139deff9e0bbb26}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+draw\+\_\+string@{glcd\+\_\+tiny\+\_\+draw\+\_\+string}}
+\index{glcd\+\_\+tiny\+\_\+draw\+\_\+string@{glcd\+\_\+tiny\+\_\+draw\+\_\+string}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+draw\+\_\+string(uint8\+\_\+t x, uint8\+\_\+t line, char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+draw\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{line, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_ga679994954873b92bd139deff9e0bbb26}
+Write string to display buffer in tiny 5x7 font. Will wrap to next line if needed. Screen is not updated. Use \hyperlink{group___controllers_ga0df6c0642fff31b764298958eda56efb}{glcd\+\_\+write()} to physically update display. 
+\begin{DoxyParams}{Parameters}
+{\em x} & column position to start \\
+\hline
+{\em line} & line number to be written (each line is 8 pixels high) \\
+\hline
+{\em str} & string to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 81 of file text\+\_\+tiny.\+c.
+
+\hypertarget{group___tiny_text_gafc083b51f666e69c1e40e1b90f80797f}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend@{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend}}
+\index{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend@{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend(char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_gafc083b51f666e69c1e40e1b90f80797f}
+Write string to bottom row of display. Screen buffer is scrolled up by one line. Screen is then physically updated. 
+\begin{DoxyParams}{Parameters}
+{\em str} & string to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file text\+\_\+tiny.\+c.
+
+\hypertarget{group___tiny_text_ga396ad980cf754dc4db4746d7684e3630}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P@{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P}}
+\index{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P@{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P(const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_ga396ad980cf754dc4db4746d7684e3630}
+Write string from flash memory to bottom row of display. Screen buffer is scrolled up by one line. Screen is then physically updated. 
+\begin{DoxyParams}{Parameters}
+{\em str} & string to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file text\+\_\+tiny.\+c.
+
+\hypertarget{group___tiny_text_gade30aed750a83809464e75feff501da9}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P@{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P}}
+\index{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P@{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P(uint8\+\_\+t x, uint8\+\_\+t line, const char $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{line, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_gade30aed750a83809464e75feff501da9}
+Write flash string to display buffer in tiny 5x7 font. Will wrap to next line if needed. Screen is not updated. Use \hyperlink{group___controllers_ga0df6c0642fff31b764298958eda56efb}{glcd\+\_\+write()} to physically update display. 
+\begin{DoxyParams}{Parameters}
+{\em x} & column position to start \\
+\hline
+{\em line} & line to be written (each line is 8 pixels high) \\
+\hline
+{\em str} & string stored in flash memory to be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file text\+\_\+tiny.\+c.
+
+\hypertarget{group___tiny_text_gaf76035b880aa7c2a4def39e54c990fd6}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+invert\+\_\+line@{glcd\+\_\+tiny\+\_\+invert\+\_\+line}}
+\index{glcd\+\_\+tiny\+\_\+invert\+\_\+line@{glcd\+\_\+tiny\+\_\+invert\+\_\+line}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+invert\+\_\+line(uint8\+\_\+t line)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+invert\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{line}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_gaf76035b880aa7c2a4def39e54c990fd6}
+Invert all contents of line number. Line 0 is the top most line. 
+\begin{DoxyParams}{Parameters}
+{\em line} & Line number (0 is top most line) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file text\+\_\+tiny.\+c.
+
+\hypertarget{group___tiny_text_ga8df82f7f6d616587f2c5ca55ac9f72fa}{}\index{Tiny Text@{Tiny Text}!glcd\+\_\+tiny\+\_\+set\+\_\+font@{glcd\+\_\+tiny\+\_\+set\+\_\+font}}
+\index{glcd\+\_\+tiny\+\_\+set\+\_\+font@{glcd\+\_\+tiny\+\_\+set\+\_\+font}!Tiny Text@{Tiny Text}}
+\subsubsection[{glcd\+\_\+tiny\+\_\+set\+\_\+font(const char $\ast$font\+\_\+table, uint8\+\_\+t width, uint8\+\_\+t height, char start\+\_\+char, char end\+\_\+char)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+tiny\+\_\+set\+\_\+font (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{font\+\_\+table, }
+\item[{uint8\+\_\+t}]{width, }
+\item[{uint8\+\_\+t}]{height, }
+\item[{char}]{start\+\_\+char, }
+\item[{char}]{end\+\_\+char}
+\end{DoxyParamCaption}
+)}\label{group___tiny_text_ga8df82f7f6d616587f2c5ca55ac9f72fa}
+Set font to be used from now on. This is the tiny 5x7 monospace font. 
+\begin{DoxyParams}{Parameters}
+{\em font\+\_\+table} & flash pointer to start from font table \\
+\hline
+{\em width} & width of each character \\
+\hline
+{\em height} & height of each character \\
+\hline
+{\em start\+\_\+char} & start character \\
+\hline
+{\em end\+\_\+char} & end character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Only suitable for Stang font storage format. For Mikro\+Elektronika format, use \hyperlink{group___standard_text_gababc52ef5bcc974352ba1eed55ac69c5}{glcd\+\_\+set\+\_\+font()} 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group___standard_text_gababc52ef5bcc974352ba1eed55ac69c5}{glcd\+\_\+set\+\_\+font()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 40 of file text\+\_\+tiny.\+c.
+

@@ -1,0 +1,49 @@
+\hypertarget{group___devices}{}\section{Devices}
+\label{group___devices}\index{Devices@{Devices}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___devices_gac36b70ff7aeeb8d5aa3c7f0508cf701a}{glcd\+\_\+init} (void)
+\item 
+void \hyperlink{group___devices_ga768f5d37837bfc116dc8eea346072e03}{glcd\+\_\+spi\+\_\+write} (uint8\+\_\+t c)
+\item 
+void \hyperlink{group___devices_gae2559cd67681ecc15fbbfe1bff5d7c05}{glcd\+\_\+reset} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions specific to certain devices (microcontrollers) 
+
+\subsection{Function Documentation}
+\hypertarget{group___devices_gac36b70ff7aeeb8d5aa3c7f0508cf701a}{}\index{Devices@{Devices}!glcd\+\_\+init@{glcd\+\_\+init}}
+\index{glcd\+\_\+init@{glcd\+\_\+init}!Devices@{Devices}}
+\subsubsection[{glcd\+\_\+init(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group___devices_gac36b70ff7aeeb8d5aa3c7f0508cf701a}
+Initialise the L\+C\+D. This function is platform and controller specific. \hypertarget{group___devices_gae2559cd67681ecc15fbbfe1bff5d7c05}{}\index{Devices@{Devices}!glcd\+\_\+reset@{glcd\+\_\+reset}}
+\index{glcd\+\_\+reset@{glcd\+\_\+reset}!Devices@{Devices}}
+\subsubsection[{glcd\+\_\+reset(void)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group___devices_gae2559cd67681ecc15fbbfe1bff5d7c05}
+Reset the L\+C\+D. \begin{DoxyNote}{Note}
+Not all L\+C\+D controllers support reset. 
+\end{DoxyNote}
+\hypertarget{group___devices_ga768f5d37837bfc116dc8eea346072e03}{}\index{Devices@{Devices}!glcd\+\_\+spi\+\_\+write@{glcd\+\_\+spi\+\_\+write}}
+\index{glcd\+\_\+spi\+\_\+write@{glcd\+\_\+spi\+\_\+write}!Devices@{Devices}}
+\subsubsection[{glcd\+\_\+spi\+\_\+write(uint8\+\_\+t c)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+spi\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{c}
+\end{DoxyParamCaption}
+)}\label{group___devices_ga768f5d37837bfc116dc8eea346072e03}
+Write a byte to the connected S\+P\+I slave. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Byte to be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returned value from S\+P\+I (often not used) 
+\end{DoxyReturn}

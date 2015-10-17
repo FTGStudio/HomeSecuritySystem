@@ -1,0 +1,43 @@
+\hypertarget{glcd__text__tiny_8h}{}\section{glcd/glcd\+\_\+text\+\_\+tiny.h File Reference}
+\label{glcd__text__tiny_8h}\index{glcd/glcd\+\_\+text\+\_\+tiny.\+h@{glcd/glcd\+\_\+text\+\_\+tiny.\+h}}
+
+
+G\+L\+C\+D Library -\/ Tiny Text functions.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___tiny_text_ga9ea14415ac02bc0ddb4cd0fc89084a35}{G\+L\+C\+D\+\_\+\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T}()~\hyperlink{group___tiny_text_ga8df82f7f6d616587f2c5ca55ac9f72fa}{glcd\+\_\+tiny\+\_\+set\+\_\+font}(Font5x7,5,7,32,127);
+\item 
+\#define \hyperlink{group___tiny_text_ga90afbd21697b61f33dcb1043ce91a164}{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E}(str)  ~\hyperlink{group___tiny_text_gafc083b51f666e69c1e40e1b90f80797f}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend}(str)
+\item 
+\#define \hyperlink{group___tiny_text_gab4d98419566ec857011ac6f1d3175437}{G\+L\+C\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P}(str)~\hyperlink{group___tiny_text_ga396ad980cf754dc4db4746d7684e3630}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P}(str)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___tiny_text_ga8df82f7f6d616587f2c5ca55ac9f72fa}{glcd\+\_\+tiny\+\_\+set\+\_\+font} (const char $\ast$font\+\_\+table, uint8\+\_\+t width, uint8\+\_\+t height, char start\+\_\+char, char end\+\_\+char)
+\item 
+void \hyperlink{group___tiny_text_ga5ba33d2c7a7bd5c397963f0d0dffd628}{glcd\+\_\+tiny\+\_\+draw\+\_\+char} (uint8\+\_\+t x, uint8\+\_\+t line, char c)
+\item 
+void \hyperlink{group___tiny_text_ga679994954873b92bd139deff9e0bbb26}{glcd\+\_\+tiny\+\_\+draw\+\_\+string} (uint8\+\_\+t x, uint8\+\_\+t line, char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_gade30aed750a83809464e75feff501da9}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+\+P} (uint8\+\_\+t x, uint8\+\_\+t line, const char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_gafc083b51f666e69c1e40e1b90f80797f}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend} (char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_ga396ad980cf754dc4db4746d7684e3630}{glcd\+\_\+tiny\+\_\+draw\+\_\+string\+\_\+ammend\+\_\+\+P} (const char $\ast$str)
+\item 
+void \hyperlink{group___tiny_text_gaf76035b880aa7c2a4def39e54c990fd6}{glcd\+\_\+tiny\+\_\+invert\+\_\+line} (uint8\+\_\+t line)
+\item 
+void \hyperlink{group___tiny_text_ga756fd3e5bc5206a45bc6bda7ecd0356f}{glcd\+\_\+tiny\+\_\+draw\+\_\+char\+\_\+xy} (uint8\+\_\+t x, uint8\+\_\+t y, char c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\+L\+C\+D Library -\/ Tiny Text functions. 
+
+\begin{DoxyAuthor}{Author}
+Andy Gock 
+\end{DoxyAuthor}

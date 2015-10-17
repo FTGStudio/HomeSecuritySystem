@@ -1,0 +1,359 @@
+\hypertarget{group___graphics}{}\section{Graphics}
+\label{group___graphics}\index{Graphics@{Graphics}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___graphics_gaad4f2c4243099dc3cf88b9ba98b71a9d}{glcd\+\_\+set\+\_\+pixel} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t color)
+\item 
+uint8\+\_\+t \hyperlink{group___graphics_ga5192f0cdb3d5daf0f97e3c8870d4ff23}{glcd\+\_\+get\+\_\+pixel} (uint8\+\_\+t x, uint8\+\_\+t y)
+\item 
+void \hyperlink{group___graphics_gad4a67c658c79370813d69648680d7008}{glcd\+\_\+invert\+\_\+pixel} (uint8\+\_\+t x, uint8\+\_\+t y)
+\item 
+void \hyperlink{group___graphics_ga8dbb8d7606a67e9f7b8ae6cfc633bbe2}{glcd\+\_\+draw\+\_\+line} (uint8\+\_\+t x0, uint8\+\_\+t y0, uint8\+\_\+t x1, uint8\+\_\+t y1, uint8\+\_\+t color)
+\item 
+void \hyperlink{group___graphics_gaa56253e0033a874217d3b0fb86bb7ee3}{glcd\+\_\+fill\+\_\+rect} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t color)
+\item 
+void \hyperlink{group___graphics_ga1cac5dc93f1be733184cffb348e34bcc}{glcd\+\_\+draw\+\_\+rect} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t color)
+\item 
+void \hyperlink{group___graphics_ga98f91d8094d21d2dcc6d9aaebb4c7802}{glcd\+\_\+draw\+\_\+rect\+\_\+thick} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t tx, uint8\+\_\+t ty, uint8\+\_\+t color)
+\item 
+void \hyperlink{group___graphics_ga92295395cf0e6b123c9a1a845b679b63}{glcd\+\_\+draw\+\_\+rect\+\_\+shadow} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t color)
+\item 
+void \hyperlink{group___graphics_ga0fee5866d7e323e98f17cf912f471944}{glcd\+\_\+draw\+\_\+circle} (uint8\+\_\+t x0, uint8\+\_\+t y0, uint8\+\_\+t r, uint8\+\_\+t color)
+\item 
+void \hyperlink{group___graphics_ga8b94c2f0404e9ba8232ed8a1785e100b}{glcd\+\_\+fill\+\_\+circle} (uint8\+\_\+t x0, uint8\+\_\+t y0, uint8\+\_\+t r, uint8\+\_\+t color)
+\item 
+void \hyperlink{group___graphics_ga4da9ce4ca69f8aba67221f444639b6ec}{glcd\+\_\+invert\+\_\+area} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h)
+\item 
+void \hyperlink{group___graphics_gad667b851f87d6330d00a7b43937cea2f}{glcd\+\_\+draw\+\_\+bitmap} (const unsigned char $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Graphics specific functions such as drawing lines, circles, rectangles etc. 
+
+\subsection{Function Documentation}
+\hypertarget{group___graphics_gad667b851f87d6330d00a7b43937cea2f}{}\index{Graphics@{Graphics}!glcd\+\_\+draw\+\_\+bitmap@{glcd\+\_\+draw\+\_\+bitmap}}
+\index{glcd\+\_\+draw\+\_\+bitmap@{glcd\+\_\+draw\+\_\+bitmap}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+draw\+\_\+bitmap(const unsigned char $\ast$data)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+draw\+\_\+bitmap (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{group___graphics_gad667b851f87d6330d00a7b43937cea2f}
+Draw bitmap to screen buffer. Note this will draw to the entire buffer, its not yet possible to draw partially to the L\+C\+D. Not yet supported with A\+V\+R pgmspace. 
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to bitmap data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 279 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga0fee5866d7e323e98f17cf912f471944}{}\index{Graphics@{Graphics}!glcd\+\_\+draw\+\_\+circle@{glcd\+\_\+draw\+\_\+circle}}
+\index{glcd\+\_\+draw\+\_\+circle@{glcd\+\_\+draw\+\_\+circle}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+draw\+\_\+circle(uint8\+\_\+t x0, uint8\+\_\+t y0, uint8\+\_\+t r, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+draw\+\_\+circle (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x0, }
+\item[{uint8\+\_\+t}]{y0, }
+\item[{uint8\+\_\+t}]{r, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga0fee5866d7e323e98f17cf912f471944}
+Draw circle but do not fill. The border of the rectangle is the same as fill colour 
+\begin{DoxyParams}{Parameters}
+{\em x0} & Centre x-\/coordinate (left-\/most) \\
+\hline
+{\em y0} & Centre y-\/coordinate (top-\/most) \\
+\hline
+{\em r} & Radius \\
+\hline
+{\em color} & Colour of border \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 190 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga8dbb8d7606a67e9f7b8ae6cfc633bbe2}{}\index{Graphics@{Graphics}!glcd\+\_\+draw\+\_\+line@{glcd\+\_\+draw\+\_\+line}}
+\index{glcd\+\_\+draw\+\_\+line@{glcd\+\_\+draw\+\_\+line}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+draw\+\_\+line(uint8\+\_\+t x0, uint8\+\_\+t y0, uint8\+\_\+t x1, uint8\+\_\+t y1, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+draw\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x0, }
+\item[{uint8\+\_\+t}]{y0, }
+\item[{uint8\+\_\+t}]{x1, }
+\item[{uint8\+\_\+t}]{y1, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga8dbb8d7606a67e9f7b8ae6cfc633bbe2}
+Draw line 
+\begin{DoxyParams}{Parameters}
+{\em x0} & Start x-\/coordinate \\
+\hline
+{\em y0} & Start y-\/coordinate \\
+\hline
+{\em x1} & End x-\/coordinate \\
+\hline
+{\em y1} & End y-\/coordinate \\
+\hline
+{\em color} & Colour to set pixels \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 85 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga1cac5dc93f1be733184cffb348e34bcc}{}\index{Graphics@{Graphics}!glcd\+\_\+draw\+\_\+rect@{glcd\+\_\+draw\+\_\+rect}}
+\index{glcd\+\_\+draw\+\_\+rect@{glcd\+\_\+draw\+\_\+rect}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+draw\+\_\+rect(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+draw\+\_\+rect (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{w, }
+\item[{uint8\+\_\+t}]{h, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga1cac5dc93f1be733184cffb348e34bcc}
+Draw rectangle but do not fill. The border of the rectangle is the same as fill colour 
+\begin{DoxyParams}{Parameters}
+{\em x} & Start x-\/coordinate (left-\/most) \\
+\hline
+{\em y} & Start y-\/coordinate (top-\/most) \\
+\hline
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+{\em color} & Colour of border \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 140 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga92295395cf0e6b123c9a1a845b679b63}{}\index{Graphics@{Graphics}!glcd\+\_\+draw\+\_\+rect\+\_\+shadow@{glcd\+\_\+draw\+\_\+rect\+\_\+shadow}}
+\index{glcd\+\_\+draw\+\_\+rect\+\_\+shadow@{glcd\+\_\+draw\+\_\+rect\+\_\+shadow}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+draw\+\_\+rect\+\_\+shadow(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+draw\+\_\+rect\+\_\+shadow (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{w, }
+\item[{uint8\+\_\+t}]{h, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga92295395cf0e6b123c9a1a845b679b63}
+Draw rectangle but do not fill. Place a shadow line on the bottom-\/right of the window. The border of the rectangle is the same as fill colour 
+\begin{DoxyParams}{Parameters}
+{\em x} & Start x-\/coordinate (left-\/most) \\
+\hline
+{\em y} & Start y-\/coordinate (top-\/most) \\
+\hline
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+{\em color} & Colour of border \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 183 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga98f91d8094d21d2dcc6d9aaebb4c7802}{}\index{Graphics@{Graphics}!glcd\+\_\+draw\+\_\+rect\+\_\+thick@{glcd\+\_\+draw\+\_\+rect\+\_\+thick}}
+\index{glcd\+\_\+draw\+\_\+rect\+\_\+thick@{glcd\+\_\+draw\+\_\+rect\+\_\+thick}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+draw\+\_\+rect\+\_\+thick(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t tx, uint8\+\_\+t ty, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+draw\+\_\+rect\+\_\+thick (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{w, }
+\item[{uint8\+\_\+t}]{h, }
+\item[{uint8\+\_\+t}]{tx, }
+\item[{uint8\+\_\+t}]{ty, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga98f91d8094d21d2dcc6d9aaebb4c7802}
+Draw rectangle but do not fill. User specified thickness. The border of the rectangle is the same as fill colour 
+\begin{DoxyParams}{Parameters}
+{\em x} & Start x-\/coordinate (left-\/most) \\
+\hline
+{\em y} & Start y-\/coordinate (top-\/most) \\
+\hline
+{\em w} & Width (outermost pixels) \\
+\hline
+{\em h} & Height \\
+\hline
+{\em tx} & Thickness of horizontal border along X axis \\
+\hline
+{\em ty} & Thickness of vertical border along Y axis \\
+\hline
+{\em color} & Colour of border \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 154 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga8b94c2f0404e9ba8232ed8a1785e100b}{}\index{Graphics@{Graphics}!glcd\+\_\+fill\+\_\+circle@{glcd\+\_\+fill\+\_\+circle}}
+\index{glcd\+\_\+fill\+\_\+circle@{glcd\+\_\+fill\+\_\+circle}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+fill\+\_\+circle(uint8\+\_\+t x0, uint8\+\_\+t y0, uint8\+\_\+t r, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+fill\+\_\+circle (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x0, }
+\item[{uint8\+\_\+t}]{y0, }
+\item[{uint8\+\_\+t}]{r, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga8b94c2f0404e9ba8232ed8a1785e100b}
+Draw circle and fill. The border of the rectangle is the same as fill colour 
+\begin{DoxyParams}{Parameters}
+{\em x0} & Centre x-\/coordinate (left-\/most) \\
+\hline
+{\em y0} & Centre y-\/coordinate (top-\/most) \\
+\hline
+{\em r} & Radius \\
+\hline
+{\em color} & Colour of border \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 229 of file graphics.\+c.
+
+\hypertarget{group___graphics_gaa56253e0033a874217d3b0fb86bb7ee3}{}\index{Graphics@{Graphics}!glcd\+\_\+fill\+\_\+rect@{glcd\+\_\+fill\+\_\+rect}}
+\index{glcd\+\_\+fill\+\_\+rect@{glcd\+\_\+fill\+\_\+rect}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+fill\+\_\+rect(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+fill\+\_\+rect (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{w, }
+\item[{uint8\+\_\+t}]{h, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_gaa56253e0033a874217d3b0fb86bb7ee3}
+Draw rectangle and fill with colour. The border of the rectangle is the same as fill colour 
+\begin{DoxyParams}{Parameters}
+{\em x} & Start x-\/coordinate (left-\/most) \\
+\hline
+{\em y} & Start y-\/coordinate (top-\/most) \\
+\hline
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+{\em color} & Colour to fill with \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 128 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga5192f0cdb3d5daf0f97e3c8870d4ff23}{}\index{Graphics@{Graphics}!glcd\+\_\+get\+\_\+pixel@{glcd\+\_\+get\+\_\+pixel}}
+\index{glcd\+\_\+get\+\_\+pixel@{glcd\+\_\+get\+\_\+pixel}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+get\+\_\+pixel(uint8\+\_\+t x, uint8\+\_\+t y)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t glcd\+\_\+get\+\_\+pixel (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga5192f0cdb3d5daf0f97e3c8870d4ff23}
+Get state of pixel from specified location 
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate \\
+\hline
+{\em y} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Colour 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file graphics.\+c.
+
+\hypertarget{group___graphics_ga4da9ce4ca69f8aba67221f444639b6ec}{}\index{Graphics@{Graphics}!glcd\+\_\+invert\+\_\+area@{glcd\+\_\+invert\+\_\+area}}
+\index{glcd\+\_\+invert\+\_\+area@{glcd\+\_\+invert\+\_\+area}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+invert\+\_\+area(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t w, uint8\+\_\+t h)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+invert\+\_\+area (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{w, }
+\item[{uint8\+\_\+t}]{h}
+\end{DoxyParamCaption}
+)}\label{group___graphics_ga4da9ce4ca69f8aba67221f444639b6ec}
+Invert pixels in a retangular area. 
+\begin{DoxyParams}{Parameters}
+{\em x} & Start x-\/coordinate (left-\/most) \\
+\hline
+{\em y} & Start y-\/coordinate (top-\/most) \\
+\hline
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 267 of file graphics.\+c.
+
+\hypertarget{group___graphics_gad4a67c658c79370813d69648680d7008}{}\index{Graphics@{Graphics}!glcd\+\_\+invert\+\_\+pixel@{glcd\+\_\+invert\+\_\+pixel}}
+\index{glcd\+\_\+invert\+\_\+pixel@{glcd\+\_\+invert\+\_\+pixel}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+invert\+\_\+pixel(uint8\+\_\+t x, uint8\+\_\+t y)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+invert\+\_\+pixel (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y}
+\end{DoxyParamCaption}
+)}\label{group___graphics_gad4a67c658c79370813d69648680d7008}
+Invert state of pixel of specified location 
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate \\
+\hline
+{\em y} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file graphics.\+c.
+
+\hypertarget{group___graphics_gaad4f2c4243099dc3cf88b9ba98b71a9d}{}\index{Graphics@{Graphics}!glcd\+\_\+set\+\_\+pixel@{glcd\+\_\+set\+\_\+pixel}}
+\index{glcd\+\_\+set\+\_\+pixel@{glcd\+\_\+set\+\_\+pixel}!Graphics@{Graphics}}
+\subsubsection[{glcd\+\_\+set\+\_\+pixel(uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t color)}]{\setlength{\rightskip}{0pt plus 5cm}void glcd\+\_\+set\+\_\+pixel (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{x, }
+\item[{uint8\+\_\+t}]{y, }
+\item[{uint8\+\_\+t}]{color}
+\end{DoxyParamCaption}
+)}\label{group___graphics_gaad4f2c4243099dc3cf88b9ba98b71a9d}
+Set pixel to specified colour 
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate \\
+\hline
+{\em y} & Y-\/coordinate \\
+\hline
+{\em color} & Colour to set pixel \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Colour\+Constants 
+\end{DoxySeeAlso}
+
+
+Definition at line 46 of file graphics.\+c.
+

@@ -1,0 +1,56 @@
+\hypertarget{struct_queue_definition}{}\section{Queue\+Definition Struct Reference}
+\label{struct_queue_definition}\index{Queue\+Definition@{Queue\+Definition}}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_queue_definition_adfa75f7bc22a3a58a907676c0164a1c1}{}int8\+\_\+t $\ast$ {\bfseries pc\+Head}\label{struct_queue_definition_adfa75f7bc22a3a58a907676c0164a1c1}
+
+\item 
+\hypertarget{struct_queue_definition_aec0a6e253e1e05c107bf2a77c1bed940}{}int8\+\_\+t $\ast$ {\bfseries pc\+Tail}\label{struct_queue_definition_aec0a6e253e1e05c107bf2a77c1bed940}
+
+\item 
+\hypertarget{struct_queue_definition_aa018576801d60d3a78ffacab53dc8b79}{}int8\+\_\+t $\ast$ {\bfseries pc\+Write\+To}\label{struct_queue_definition_aa018576801d60d3a78ffacab53dc8b79}
+
+\item 
+\hypertarget{struct_queue_definition_ae98cf2c7800ab28ccfb454fafcbec572}{}\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>int8\_t $\ast$ {\bfseries pcReadFrom}\\
+\>UBaseType\_t {\bfseries uxRecursiveCallCount}\\
+\} {\bfseries u}\label{struct_queue_definition_ae98cf2c7800ab28ccfb454fafcbec572}
+\\
+
+\end{tabbing}\item 
+\hypertarget{struct_queue_definition_a5cfd8ae6db5da134ed16405043a0d898}{}\hyperlink{structx_l_i_s_t}{List\+\_\+t} {\bfseries x\+Tasks\+Waiting\+To\+Send}\label{struct_queue_definition_a5cfd8ae6db5da134ed16405043a0d898}
+
+\item 
+\hypertarget{struct_queue_definition_a8ad185d9d83713c774e6a897580d8313}{}\hyperlink{structx_l_i_s_t}{List\+\_\+t} {\bfseries x\+Tasks\+Waiting\+To\+Receive}\label{struct_queue_definition_a8ad185d9d83713c774e6a897580d8313}
+
+\item 
+\hypertarget{struct_queue_definition_afb61b3f2247402ed3b8b159311c408b7}{}volatile U\+Base\+Type\+\_\+t {\bfseries ux\+Messages\+Waiting}\label{struct_queue_definition_afb61b3f2247402ed3b8b159311c408b7}
+
+\item 
+\hypertarget{struct_queue_definition_a619169da78e43281a73fbdf13f9eddfb}{}U\+Base\+Type\+\_\+t {\bfseries ux\+Length}\label{struct_queue_definition_a619169da78e43281a73fbdf13f9eddfb}
+
+\item 
+\hypertarget{struct_queue_definition_a216cc99516d7f82573f6cb19f5a9f626}{}U\+Base\+Type\+\_\+t {\bfseries ux\+Item\+Size}\label{struct_queue_definition_a216cc99516d7f82573f6cb19f5a9f626}
+
+\item 
+\hypertarget{struct_queue_definition_a4b64e89afe499402ab4c2e8f8ce73b8e}{}volatile Base\+Type\+\_\+t {\bfseries x\+Rx\+Lock}\label{struct_queue_definition_a4b64e89afe499402ab4c2e8f8ce73b8e}
+
+\item 
+\hypertarget{struct_queue_definition_a89f0f7b2578d1d12e7d33ad5b13e931a}{}volatile Base\+Type\+\_\+t {\bfseries x\+Tx\+Lock}\label{struct_queue_definition_a89f0f7b2578d1d12e7d33ad5b13e931a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 130 of file queue.\+c.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/queue.\+c\end{DoxyCompactItemize}
