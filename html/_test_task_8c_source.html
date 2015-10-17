@@ -50,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -73,7 +72,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -125,10 +123,10 @@ $(document).ready(function(){initNavTree('_test_task_8c_source.html','');});
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> vTestTask(<span class="keywordtype">void</span> *pvParameters)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="struct_hall_effect_msg__t.html">HallEffectMsg_t</a> hallEffectMessage;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="struct_l_c_d_msg__t.html">LCDMsg_t</a> LCDMessage;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="struct_r_t_c_msg__t.html">RTCMsg_t</a> RTCMessage;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="struct_wi_fi_msg__t.html">WiFiMsg_t</a> WifiMessage;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    HallEffectMsg_t hallEffectMessage;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    LCDMsg_t LCDMessage;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    RTCMsg_t RTCMessage;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    WiFiMsg_t WifiMessage;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">while</span>(1)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
@@ -139,13 +137,9 @@ $(document).ready(function(){initNavTree('_test_task_8c_source.html','');});
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        xQueueSend(rtcMsgQ, &amp;RTCMessage, 10);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        vTaskDelay(1000);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        xQueueSend(wifiMsgQ, &amp;WifiMessage, 10);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        vTaskDelay(1000);   </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        vTaskDelay(100);    </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="ttc" id="struct_hall_effect_msg__t_html"><div class="ttname"><a href="struct_hall_effect_msg__t.html">HallEffectMsg_t</a></div><div class="ttdef"><b>Definition:</b> <a href="_hall___effect_8h_source.html#l00023">Hall_Effect.h:23</a></div></div>
-<div class="ttc" id="struct_wi_fi_msg__t_html"><div class="ttname"><a href="struct_wi_fi_msg__t.html">WiFiMsg_t</a></div><div class="ttdef"><b>Definition:</b> <a href="_wi_fi_8h_source.html#l00012">WiFi.h:12</a></div></div>
-<div class="ttc" id="struct_l_c_d_msg__t_html"><div class="ttname"><a href="struct_l_c_d_msg__t.html">LCDMsg_t</a></div><div class="ttdef"><b>Definition:</b> <a href="_l_c_d_8h_source.html#l00012">LCD.h:12</a></div></div>
-<div class="ttc" id="struct_r_t_c_msg__t_html"><div class="ttname"><a href="struct_r_t_c_msg__t.html">RTCMsg_t</a></div><div class="ttdef"><b>Definition:</b> <a href="_r_t_c_8h_source.html#l00041">RTC.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

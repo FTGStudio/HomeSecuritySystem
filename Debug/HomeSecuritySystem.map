@@ -405,6 +405,8 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .text.InitializeHardware
+                0x00000000        0x2 main.o
  .text          0x00000000        0x0 RTC/RTC.o
  .data          0x00000000        0x0 RTC/RTC.o
  .bss           0x00000000        0x0 RTC/RTC.o
@@ -1522,121 +1524,121 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x3a0
+.debug_aranges  0x00000000      0x3a8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 Hall_Effect/HallEffectTask.o
  .debug_aranges
                 0x00000020       0x20 LCD/LCDTask.o
  .debug_aranges
-                0x00000040       0x20 main.o
+                0x00000040       0x28 main.o
  .debug_aranges
-                0x00000060       0x20 RTC/RTCTask.o
+                0x00000068       0x20 RTC/RTCTask.o
  .debug_aranges
-                0x00000080       0x40 Source/list.o
+                0x00000088       0x40 Source/list.o
  .debug_aranges
-                0x000000c0       0x48 Source/portable/ATMega323/port.o
+                0x000000c8       0x48 Source/portable/ATMega323/port.o
  .debug_aranges
-                0x00000108       0x38 Source/portable/MemMang/heap_1.o
+                0x00000110       0x38 Source/portable/MemMang/heap_1.o
  .debug_aranges
-                0x00000140       0xc0 Source/queue.o
+                0x00000148       0xc0 Source/queue.o
  .debug_aranges
-                0x00000200      0x130 Source/tasks.o
+                0x00000208      0x130 Source/tasks.o
  .debug_aranges
-                0x00000330       0x20 TestTask.o
+                0x00000338       0x20 TestTask.o
  .debug_aranges
-                0x00000350       0x30 uart/uart.o
+                0x00000358       0x30 uart/uart.o
  .debug_aranges
-                0x00000380       0x20 WiFi/WiFiTask.o
+                0x00000388       0x20 WiFi/WiFiTask.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x484c
+.debug_info     0x00000000     0x4861
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x1b6 Hall_Effect/HallEffectTask.o
  .debug_info    0x000001b6      0x1e3 LCD/LCDTask.o
- .debug_info    0x00000399      0x593 main.o
- .debug_info    0x0000092c      0x229 RTC/RTCTask.o
- .debug_info    0x00000b55      0x2c6 Source/list.o
- .debug_info    0x00000e1b      0x261 Source/portable/ATMega323/port.o
- .debug_info    0x0000107c      0x1ad Source/portable/MemMang/heap_1.o
- .debug_info    0x00001229     0x127e Source/queue.o
- .debug_info    0x000024a7     0x1c56 Source/tasks.o
- .debug_info    0x000040fd      0x397 TestTask.o
- .debug_info    0x00004494      0x1db uart/uart.o
- .debug_info    0x0000466f      0x1dd WiFi/WiFiTask.o
+ .debug_info    0x00000399      0x5a9 main.o
+ .debug_info    0x00000942      0x229 RTC/RTCTask.o
+ .debug_info    0x00000b6b      0x2c6 Source/list.o
+ .debug_info    0x00000e31      0x261 Source/portable/ATMega323/port.o
+ .debug_info    0x00001092      0x1ad Source/portable/MemMang/heap_1.o
+ .debug_info    0x0000123f     0x127e Source/queue.o
+ .debug_info    0x000024bd     0x1c56 Source/tasks.o
+ .debug_info    0x00004113      0x396 TestTask.o
+ .debug_info    0x000044a9      0x1db uart/uart.o
+ .debug_info    0x00004684      0x1dd WiFi/WiFiTask.o
 
-.debug_abbrev   0x00000000     0x11cb
+.debug_abbrev   0x00000000     0x11e3
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x118 Hall_Effect/HallEffectTask.o
  .debug_abbrev  0x00000118      0x132 LCD/LCDTask.o
- .debug_abbrev  0x0000024a      0x170 main.o
- .debug_abbrev  0x000003ba      0x127 RTC/RTCTask.o
- .debug_abbrev  0x000004e1       0xf8 Source/list.o
- .debug_abbrev  0x000005d9      0x167 Source/portable/ATMega323/port.o
- .debug_abbrev  0x00000740      0x12e Source/portable/MemMang/heap_1.o
- .debug_abbrev  0x0000086e      0x2b5 Source/queue.o
- .debug_abbrev  0x00000b23      0x331 Source/tasks.o
- .debug_abbrev  0x00000e54      0x11c TestTask.o
- .debug_abbrev  0x00000f70      0x129 uart/uart.o
- .debug_abbrev  0x00001099      0x132 WiFi/WiFiTask.o
+ .debug_abbrev  0x0000024a      0x188 main.o
+ .debug_abbrev  0x000003d2      0x127 RTC/RTCTask.o
+ .debug_abbrev  0x000004f9       0xf8 Source/list.o
+ .debug_abbrev  0x000005f1      0x167 Source/portable/ATMega323/port.o
+ .debug_abbrev  0x00000758      0x12e Source/portable/MemMang/heap_1.o
+ .debug_abbrev  0x00000886      0x2b5 Source/queue.o
+ .debug_abbrev  0x00000b3b      0x331 Source/tasks.o
+ .debug_abbrev  0x00000e6c      0x11c TestTask.o
+ .debug_abbrev  0x00000f88      0x129 uart/uart.o
+ .debug_abbrev  0x000010b1      0x132 WiFi/WiFiTask.o
 
-.debug_line     0x00000000     0x1ada
+.debug_line     0x00000000     0x1aea
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x150 Hall_Effect/HallEffectTask.o
  .debug_line    0x00000150      0x129 LCD/LCDTask.o
- .debug_line    0x00000279      0x1a0 main.o
- .debug_line    0x00000419      0x129 RTC/RTCTask.o
- .debug_line    0x00000542      0x171 Source/list.o
- .debug_line    0x000006b3      0x1f8 Source/portable/ATMega323/port.o
- .debug_line    0x000008ab      0x20d Source/portable/MemMang/heap_1.o
- .debug_line    0x00000ab8      0x4e5 Source/queue.o
- .debug_line    0x00000f9d      0x794 Source/tasks.o
- .debug_line    0x00001731      0x191 TestTask.o
- .debug_line    0x000018c2       0xea uart/uart.o
- .debug_line    0x000019ac      0x12e WiFi/WiFiTask.o
+ .debug_line    0x00000279      0x1b0 main.o
+ .debug_line    0x00000429      0x129 RTC/RTCTask.o
+ .debug_line    0x00000552      0x171 Source/list.o
+ .debug_line    0x000006c3      0x1f8 Source/portable/ATMega323/port.o
+ .debug_line    0x000008bb      0x20d Source/portable/MemMang/heap_1.o
+ .debug_line    0x00000ac8      0x4e5 Source/queue.o
+ .debug_line    0x00000fad      0x794 Source/tasks.o
+ .debug_line    0x00001741      0x191 TestTask.o
+ .debug_line    0x000018d2       0xea uart/uart.o
+ .debug_line    0x000019bc      0x12e WiFi/WiFiTask.o
 
-.debug_frame    0x00000000      0xa4c
+.debug_frame    0x00000000      0xa5c
  *(.debug_frame)
  .debug_frame   0x00000000       0x34 Hall_Effect/HallEffectTask.o
  .debug_frame   0x00000034       0x34 LCD/LCDTask.o
- .debug_frame   0x00000068       0x48 main.o
- .debug_frame   0x000000b0       0x34 RTC/RTCTask.o
- .debug_frame   0x000000e4       0x88 Source/list.o
- .debug_frame   0x0000016c       0x74 Source/portable/ATMega323/port.o
- .debug_frame   0x000001e0       0x60 Source/portable/MemMang/heap_1.o
- .debug_frame   0x00000240      0x2ac Source/queue.o
- .debug_frame   0x000004ec      0x4ac Source/tasks.o
- .debug_frame   0x00000998       0x34 TestTask.o
- .debug_frame   0x000009cc       0x4c uart/uart.o
- .debug_frame   0x00000a18       0x34 WiFi/WiFiTask.o
+ .debug_frame   0x00000068       0x58 main.o
+ .debug_frame   0x000000c0       0x34 RTC/RTCTask.o
+ .debug_frame   0x000000f4       0x88 Source/list.o
+ .debug_frame   0x0000017c       0x74 Source/portable/ATMega323/port.o
+ .debug_frame   0x000001f0       0x60 Source/portable/MemMang/heap_1.o
+ .debug_frame   0x00000250      0x2ac Source/queue.o
+ .debug_frame   0x000004fc      0x4ac Source/tasks.o
+ .debug_frame   0x000009a8       0x34 TestTask.o
+ .debug_frame   0x000009dc       0x4c uart/uart.o
+ .debug_frame   0x00000a28       0x34 WiFi/WiFiTask.o
 
-.debug_str      0x00000000     0x12f0
+.debug_str      0x00000000     0x1303
  *(.debug_str)
  .debug_str     0x00000000      0x1d0 Hall_Effect/HallEffectTask.o
                                 0x223 (size before relaxing)
  .debug_str     0x000001d0       0x40 LCD/LCDTask.o
                                 0x205 (size before relaxing)
- .debug_str     0x00000210      0x128 main.o
-                                0x2b9 (size before relaxing)
- .debug_str     0x00000338       0x56 RTC/RTCTask.o
+ .debug_str     0x00000210      0x13b main.o
+                                0x2cc (size before relaxing)
+ .debug_str     0x0000034b       0x56 RTC/RTCTask.o
                                 0x22b (size before relaxing)
- .debug_str     0x0000038e      0x12e Source/list.o
+ .debug_str     0x000003a1      0x12e Source/list.o
                                 0x29a (size before relaxing)
- .debug_str     0x000004bc      0x109 Source/portable/ATMega323/port.o
+ .debug_str     0x000004cf      0x109 Source/portable/ATMega323/port.o
                                 0x2b0 (size before relaxing)
- .debug_str     0x000005c5       0xc5 Source/portable/MemMang/heap_1.o
+ .debug_str     0x000005d8       0xc5 Source/portable/MemMang/heap_1.o
                                 0x230 (size before relaxing)
- .debug_str     0x0000068a      0x45c Source/queue.o
+ .debug_str     0x0000069d      0x45c Source/queue.o
                                 0x737 (size before relaxing)
- .debug_str     0x00000ae6      0x752 Source/tasks.o
+ .debug_str     0x00000af9      0x752 Source/tasks.o
                                 0xc2e (size before relaxing)
- .debug_str     0x00001238       0x63 TestTask.o
+ .debug_str     0x0000124b       0x63 TestTask.o
                                 0x2b4 (size before relaxing)
- .debug_str     0x0000129b       0x38 uart/uart.o
+ .debug_str     0x000012ae       0x38 uart/uart.o
                                 0x1af (size before relaxing)
- .debug_str     0x000012d3       0x1d WiFi/WiFiTask.o
+ .debug_str     0x000012e6       0x1d WiFi/WiFiTask.o
                                 0x207 (size before relaxing)
 
 .debug_loc      0x00000000     0x3c1c
@@ -1672,20 +1674,20 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x328
+.debug_ranges   0x00000000      0x330
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 Hall_Effect/HallEffectTask.o
  .debug_ranges  0x00000010       0x10 LCD/LCDTask.o
- .debug_ranges  0x00000020       0x10 main.o
- .debug_ranges  0x00000030       0x10 RTC/RTCTask.o
- .debug_ranges  0x00000040       0x30 Source/list.o
- .debug_ranges  0x00000070       0x38 Source/portable/ATMega323/port.o
- .debug_ranges  0x000000a8       0x28 Source/portable/MemMang/heap_1.o
- .debug_ranges  0x000000d0       0xb0 Source/queue.o
- .debug_ranges  0x00000180      0x168 Source/tasks.o
- .debug_ranges  0x000002e8       0x10 TestTask.o
- .debug_ranges  0x000002f8       0x20 uart/uart.o
- .debug_ranges  0x00000318       0x10 WiFi/WiFiTask.o
+ .debug_ranges  0x00000020       0x18 main.o
+ .debug_ranges  0x00000038       0x10 RTC/RTCTask.o
+ .debug_ranges  0x00000048       0x30 Source/list.o
+ .debug_ranges  0x00000078       0x38 Source/portable/ATMega323/port.o
+ .debug_ranges  0x000000b0       0x28 Source/portable/MemMang/heap_1.o
+ .debug_ranges  0x000000d8       0xb0 Source/queue.o
+ .debug_ranges  0x00000188      0x168 Source/tasks.o
+ .debug_ranges  0x000002f0       0x10 TestTask.o
+ .debug_ranges  0x00000300       0x20 uart/uart.o
+ .debug_ranges  0x00000320       0x10 WiFi/WiFiTask.o
 
 .debug_macro
  *(.debug_macro)

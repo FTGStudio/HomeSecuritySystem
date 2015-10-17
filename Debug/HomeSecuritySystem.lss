@@ -11,21 +11,21 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   3 .comment      00000030  00000000  00000000  000016a6  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 000003a0  00000000  00000000  000016d6  2**0
+  4 .debug_aranges 000003a8  00000000  00000000  000016d6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   0000484c  00000000  00000000  00001a76  2**0
+  5 .debug_info   00004861  00000000  00000000  00001a7e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000011cb  00000000  00000000  000062c2  2**0
+  6 .debug_abbrev 000011e3  00000000  00000000  000062df  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00001ada  00000000  00000000  0000748d  2**0
+  7 .debug_line   00001aea  00000000  00000000  000074c2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000a4c  00000000  00000000  00008f68  2**2
+  8 .debug_frame  00000a5c  00000000  00000000  00008fac  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000012f0  00000000  00000000  000099b4  2**0
+  9 .debug_str    00001303  00000000  00000000  00009a08  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00003c1c  00000000  00000000  0000aca4  2**0
+ 10 .debug_loc    00003c1c  00000000  00000000  0000ad0b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000328  00000000  00000000  0000e8c0  2**0
+ 11 .debug_ranges 00000330  00000000  00000000  0000e927  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -173,7 +173,7 @@ void vLCDTask(void *pvParameters)
 00000108 <main>:
 #define MYUBRR						F_CPU/8/BAUD-1
 
-
+void InitializeHardware(void);
 
 int main(void)
 {
@@ -290,6 +290,7 @@ int main(void)
 	
 	vTaskStartScheduler();
      1f0:	0e 94 0a 07 	call	0xe14	; 0xe14 <vTaskStartScheduler>
+}
      1f4:	80 e0       	ldi	r24, 0x00	; 0
      1f6:	90 e0       	ldi	r25, 0x00	; 0
      1f8:	0f 91       	pop	r16
@@ -4233,9 +4234,9 @@ void vTestTask(void *pvParameters)
     1474:	80 91 f6 05 	lds	r24, 0x05F6
     1478:	90 91 f7 05 	lds	r25, 0x05F7
     147c:	0e 94 58 04 	call	0x8b0	; 0x8b0 <xQueueGenericSend>
-		vTaskDelay(1000);	
-    1480:	88 ee       	ldi	r24, 0xE8	; 232
-    1482:	93 e0       	ldi	r25, 0x03	; 3
+		vTaskDelay(100);	
+    1480:	84 e6       	ldi	r24, 0x64	; 100
+    1482:	90 e0       	ldi	r25, 0x00	; 0
     1484:	0e 94 84 08 	call	0x1108	; 0x1108 <vTaskDelay>
     1488:	bf cf       	rjmp	.-130    	; 0x1408 <vTestTask+0x14>
 

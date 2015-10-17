@@ -27,6 +27,6 @@ void vTestTask(void *pvParameters)
 		xQueueSend(rtcMsgQ, &RTCMessage, 10);
 		vTaskDelay(1000);
 		xQueueSend(wifiMsgQ, &WifiMessage, 10);
-		vTaskDelay(1000);	
+		vTaskDelay(100);	
 	}
 }

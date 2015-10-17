@@ -3,7 +3,13 @@
  *
  * Created: 10/12/2015 1:29:19 PM
  *  Author: Michael
- */ 
+*/ 
+/*!
+*
+* \addtogroup main
+* \defgroup  main
+* @{
+*/
 
 
 #include <avr/io.h>
@@ -25,7 +31,7 @@
 #define BAUD						9600 
 #define MYUBRR						F_CPU/8/BAUD-1
 
-
+void InitializeHardware(void);
 
 int main(void)
 {
@@ -48,3 +54,19 @@ int main(void)
 	
 	vTaskStartScheduler();
 }
+
+/*!******************************************************************************
+* \brief Initializes all of the hardware components 
+*
+*  Initializes the LCD, Hall-effect sensor, light sensor, keypad, 
+*
+* \param void
+*
+* \return none
+********************************************************************************/
+void InitializeHardware(void)
+{
+	
+}
+
+//! @}
