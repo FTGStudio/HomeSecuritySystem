@@ -20,8 +20,8 @@ Source/portable/MemMang/heap_1.d Source/portable/MemMang/heap_1.o: \
  ../Source/portable/MemMang/../../include/deprecated_definitions.h \
  ../Source/portable/MemMang/../../include/../portable/ATMega323/portmacro.h \
  ../Source/portable/MemMang/../../include/mpu_wrappers.h \
- ../Source/portable/MemMang/../../task.h \
- ../Source/portable/MemMang/../../list.h
+ ../Source/portable/MemMang/../../include/task.h \
+ ../Source/portable/MemMang/../../include/list.h
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -63,6 +63,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 
 ../Source/portable/MemMang/../../include/mpu_wrappers.h:
 
-../Source/portable/MemMang/../../task.h:
+../Source/portable/MemMang/../../include/task.h:
 
-../Source/portable/MemMang/../../list.h:
+../Source/portable/MemMang/../../include/list.h:

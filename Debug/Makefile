@@ -36,7 +36,7 @@ SUBDIRS :=  \
 ../glcd/fonts \
 ../glcd/devices \
 ../glcd/controllers \
-../Hall\ Effect \
+../Hall_Effect \
 ../glcd \
 ../I2C \
 ../uart \
@@ -58,10 +58,12 @@ C_SRCS +=  \
 ../glcd/text.c \
 ../glcd/text_tiny.c \
 ../glcd/unit_tests.c \
-../Hall\ Effect/Hall\ Effect.c \
+../Hall_Effect/HallEffectTask.c \
+../Hall_Effect/Hall_Effect.c \
 ../I2C/I2C.c \
 ../main.c \
 ../RTC/RTC.c \
+../RTC/RTCTask.c \
 ../Source/croutine.c \
 ../Source/event_groups.c \
 ../Source/list.c \
@@ -88,10 +90,12 @@ glcd/graphs.o \
 glcd/text.o \
 glcd/text_tiny.o \
 glcd/unit_tests.o \
-Hall\ Effect/Hall\ Effect.o \
+Hall_Effect/HallEffectTask.o \
+Hall_Effect/Hall_Effect.o \
 I2C/I2C.o \
 main.o \
 RTC/RTC.o \
+RTC/RTCTask.o \
 Source/croutine.o \
 Source/event_groups.o \
 Source/list.o \
@@ -111,10 +115,12 @@ glcd/graphs.o \
 glcd/text.o \
 glcd/text_tiny.o \
 glcd/unit_tests.o \
-"Hall Effect/Hall Effect.o" \
+Hall_Effect/HallEffectTask.o \
+Hall_Effect/Hall_Effect.o \
 I2C/I2C.o \
 main.o \
 RTC/RTC.o \
+RTC/RTCTask.o \
 Source/croutine.o \
 Source/event_groups.o \
 Source/list.o \
@@ -134,10 +140,12 @@ glcd/graphs.d \
 glcd/text.d \
 glcd/text_tiny.d \
 glcd/unit_tests.d \
-Hall\ Effect/Hall\ Effect.d \
+Hall_Effect/HallEffectTask.d \
+Hall_Effect/Hall_Effect.d \
 I2C/I2C.d \
 main.d \
 RTC/RTC.d \
+RTC/RTCTask.d \
 Source/croutine.d \
 Source/event_groups.d \
 Source/list.d \
@@ -157,10 +165,12 @@ glcd/graphs.d \
 glcd/text.d \
 glcd/text_tiny.d \
 glcd/unit_tests.d \
-"Hall Effect/Hall Effect.d" \
+Hall_Effect/HallEffectTask.d \
+Hall_Effect/Hall_Effect.d \
 I2C/I2C.d \
 main.d \
 RTC/RTC.d \
+RTC/RTCTask.d \
 Source/croutine.d \
 Source/event_groups.d \
 Source/list.d \
@@ -201,12 +211,11 @@ LINKER_SCRIPT_DEP+=
 
 
 
-Hall\ Effect/Hall\ Effect.o: ../Hall\ Effect/Hall\ Effect.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.8.1
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DGLCD_DEVICE_AVR8 -DGLCD_CONTROLLER_PCD8544 -DGLCD_USE_AVR_DELAY -D__DELAY_BACKWARD_COMPATIBLE__  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
+
+
+
+
+
 
 
 
@@ -254,7 +263,7 @@ glcd/%.o: ../glcd/%.c
 	@echo Finished building: $<
 	
 
-Hall\ Effect/%.o: ../Hall\ Effect/%.c
+Hall_Effect/%.o: ../Hall_Effect/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DGLCD_DEVICE_AVR8 -DGLCD_CONTROLLER_PCD8544 -DGLCD_USE_AVR_DELAY -D__DELAY_BACKWARD_COMPATIBLE__  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

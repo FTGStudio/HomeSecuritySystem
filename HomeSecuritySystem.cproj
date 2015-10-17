@@ -181,10 +181,13 @@
     <Compile Include="glcd\unit_tests.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Hall Effect\Hall Effect.c">
+    <Compile Include="Hall_Effect\HallEffectTask.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Hall Effect\Hall Effect.h">
+    <Compile Include="Hall_Effect\Hall_Effect.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Hall_Effect\Hall_Effect.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="I2C\I2C.c">
@@ -200,6 +203,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="RTC\RTC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RTC\RTCTask.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Source\croutine.c">
@@ -285,7 +291,7 @@
     <Folder Include="glcd\fonts" />
     <Folder Include="glcd\devices" />
     <Folder Include="glcd\controllers" />
-    <Folder Include="Hall Effect" />
+    <Folder Include="Hall_Effect" />
     <Folder Include="glcd" />
     <Folder Include="I2C" />
     <Folder Include="uart" />
@@ -297,9 +303,6 @@
     <Folder Include="Source\portable\MemMang" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\include\stdint.readme">
-      <SubType>compile</SubType>
-    </None>
     <None Include="Source\readme.txt">
       <SubType>compile</SubType>
     </None>

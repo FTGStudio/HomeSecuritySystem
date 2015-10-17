@@ -1,4 +1,5 @@
-main.d main.o: .././main.c \
+Hall Effect/Hall_Effect.d Hall Effect/Hall_Effect.o: \
+ ../Hall\ Effect/Hall_Effect.c ../Hall\ Effect/Hall_Effect.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -13,19 +14,9 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\lib\gcc\avr\4.8.1\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\lib\gcc\avr\4.8.1\include\stddef.h \
- c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\stdlib.h \
- .././Source/include/FreeRTOS.h .././Source/include/FreeRTOSConfig.h \
- .././Source/include/projdefs.h .././Source/include/portable.h \
- .././Source/include/deprecated_definitions.h \
- .././Source/include/../portable/ATMega323/portmacro.h \
- .././Source/include/mpu_wrappers.h .././Source/include/task.h \
- .././Source/include/list.h .././Source/include/queue.h .././I2C/I2C.h \
- .././RTC/RTC.h .././RTC/../I2C/I2C.h \
- .././RTC/../Source/include/FreeRTOS.h .././RTC/../Source/include/task.h \
- .././RTC/../Source/include/queue.h .././Hall_Effect/Hall_Effect.h \
- .././Hall_Effect/../Source/include/FreeRTOS.h \
- .././Hall_Effect/../Source/include/task.h \
- .././Hall_Effect/../Source/include/queue.h .././uart/uart.h
+ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\stdlib.h
+
+../Hall\ Effect/Hall_Effect.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -56,45 +47,3 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\lib\gcc\avr\4.8.1\include\stddef.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\stdlib.h:
-
-.././Source/include/FreeRTOS.h:
-
-.././Source/include/FreeRTOSConfig.h:
-
-.././Source/include/projdefs.h:
-
-.././Source/include/portable.h:
-
-.././Source/include/deprecated_definitions.h:
-
-.././Source/include/../portable/ATMega323/portmacro.h:
-
-.././Source/include/mpu_wrappers.h:
-
-.././Source/include/task.h:
-
-.././Source/include/list.h:
-
-.././Source/include/queue.h:
-
-.././I2C/I2C.h:
-
-.././RTC/RTC.h:
-
-.././RTC/../I2C/I2C.h:
-
-.././RTC/../Source/include/FreeRTOS.h:
-
-.././RTC/../Source/include/task.h:
-
-.././RTC/../Source/include/queue.h:
-
-.././Hall_Effect/Hall_Effect.h:
-
-.././Hall_Effect/../Source/include/FreeRTOS.h:
-
-.././Hall_Effect/../Source/include/task.h:
-
-.././Hall_Effect/../Source/include/queue.h:
-
-.././uart/uart.h:

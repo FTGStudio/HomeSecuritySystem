@@ -11,47 +11,30 @@
 #include <stdlib.h>
 #include "Source/include/FreeRTOS.h"
 #include "Source/include/task.h"
-#include "uart/uart.h"
+#include "Source/include/queue.h"
 #include "I2C/I2C.h"
-
+#include "RTC/RTC.h"
+#include "Hall_Effect/Hall_Effect.h"
+#include "uart/uart.h"
 
 #define F_CPU						8000000
 #define mainLED_TASK_PRIORITY       ( tskIDLE_PRIORITY )
 #define BAUD						9600 
 #define MYUBRR						F_CPU/8/BAUD-1
 
-void vLEDInit(void)
-{
-	// Set LED_O as output pin
-	DDRB |= _BV(PB5);
-}
 
-void vLEDToggle(void)
-{
-	PORTB ^= _BV(PB5);
-}
-
-void vLEDFlashTask( void *pvParameters )
-{
-	printf("Initializing LED task");
-	vLEDInit();
-	portTickType xLastWakeTime;
-	portTickType xFrequency = 1000;
-	xLastWakeTime=xTaskGetTickCount();
-	for( ;; )
-	{
-		vLEDToggle();
-		vTaskDelayUntil(&xLastWakeTime, xFrequency);
-	}
-	
-}
 
 int main(void)
 {
+	
 	USART_Init(MYUBRR);
 	stdout = &uart_output;
 	stdin = &uart_input;
 	
-	xTaskCreate( vLEDFlashTask, ( signed char * ) "LED", configMINIMAL_STACK_SIZE, NULL, mainLED_TASK_PRIORITY, NULL );
+	hallEffectMsgQ = xQueueCreate(2, sizeof(HallEffectMsg_t));
+	rtcMsgQ = xQueueCreate(2, sizeof(RTCMsg_t));
+	
+	xTaskCreate( vRTCTask, ( signed char * ) "RTC", configMINIMAL_STACK_SIZE, NULL, 1, NULL );
+	xTaskCreate( vHallEffectTask, ( signed char * ) "HallEffect", configMINIMAL_STACK_SIZE, NULL, 1, NULL );
 	vTaskStartScheduler();
 }

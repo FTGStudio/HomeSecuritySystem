@@ -1,5 +1,9 @@
 #include "RTC.h"
 
+
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 void DS3231_GetTemp(byte *tempHigh, byte *tempLow)
 {
 	byte var = 0x00;
@@ -12,8 +16,10 @@ void DS3231_GetTemp(byte *tempHigh, byte *tempLow)
 	*tempLow = (I2C_ReadRegister(DS3231,TEMP_REGISTER_LSB)>>6)*25;
 }
 
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 void DS3231_GetTime(byte *hours, byte *minutes, byte *seconds)
-// returns hours, minutes, and seconds in BCD format
 {
 	*hours = I2C_ReadRegister(DS3231,HOURS_REGISTER);
 	*minutes = I2C_ReadRegister(DS3231,MINUTES_REGISTER);
@@ -22,8 +28,11 @@ void DS3231_GetTime(byte *hours, byte *minutes, byte *seconds)
 	*hours &= 0x1F; // use bottom 5 bits (pm bit = temp & 0x20)
 	else *hours &= 0x3F; // 24hr mode: use bottom 6 bits
 }
+
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 void DS3231_GetDate(byte *months, byte *days, byte *years, byte *dayOfWeek)
-// returns months, days, and years in BCD format
 {
 	*months = I2C_ReadRegister(DS3231,MONTHS_REGISTER);
 	*days = I2C_ReadRegister(DS3231,DAYS_REGISTER);
@@ -31,8 +40,9 @@ void DS3231_GetDate(byte *months, byte *days, byte *years, byte *dayOfWeek)
 	*dayOfWeek = I2C_ReadRegister(DS3231,DAYOFWK_REGISTER);
 }
 
-
-
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 void SetTime(byte *hours, byte *minutes, byte *seconds)
 {
 	I2C_WriteRegister(DS3231,HOURS_REGISTER, *hours); // add 0x40 for PM
@@ -41,6 +51,9 @@ void SetTime(byte *hours, byte *minutes, byte *seconds)
 	
 }
 
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 void SetDate(byte *months, byte *days, byte *years, byte *dayOfWeek)
 {
 	I2C_WriteRegister(DS3231,MONTHS_REGISTER, *months);
@@ -49,14 +62,17 @@ void SetDate(byte *months, byte *days, byte *years, byte *dayOfWeek)
 	I2C_WriteRegister(DS3231,DAYOFWK_REGISTER, *dayOfWeek);
 }
 
-
-//helper functions
-
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 byte asciiToHex(char input)
 {
 	return (input - 0x30);
 }
 
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 void promptTime(byte *hours, byte *minutes, byte *seconds)
 {
 	byte hoursH, hoursL, minH, minL, secH, secL;
@@ -92,6 +108,9 @@ void promptTime(byte *hours, byte *minutes, byte *seconds)
 	printf("\nTime accepted\n");
 }
 
+/************************************************************************/
+/*                                                                      */
+/************************************************************************/
 void promptDate(byte *year, byte *month, byte *day, byte *dayOfWeek)
 {
 	byte yearH, yearL, monthH, monthL, dayH, dayL, dayWeek;

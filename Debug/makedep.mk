@@ -18,13 +18,17 @@ glcd\text_tiny.c
 
 glcd\unit_tests.c
 
-Hall Effect\Hall Effect.c
+Hall_Effect\HallEffectTask.c
+
+Hall_Effect\Hall_Effect.c
 
 I2C\I2C.c
 
 main.c
 
 RTC\RTC.c
+
+RTC\RTCTask.c
 
 Source\croutine.c
 

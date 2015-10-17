@@ -6,6 +6,9 @@
  */ 
 
 #include "../I2C/I2C.h"
+#include "../Source/include/FreeRTOS.h"
+#include "../Source/include/task.h"
+#include "../Source/include/queue.h"
 
 #ifndef RTC_H_
 #define RTC_H_
@@ -25,6 +28,23 @@
 #define TEMP_REGISTER_MSB 0x11
 #define TEMP_REGISTER_LSB 0x12
 
+typedef struct  
+{
+	uint8_t seconds;
+	uint8_t hour;
+	uint8_t minute;
+	uint8_t month;
+	uint8_t year;
+	uint8_t day;
+}datetime_t;
+
+typedef struct  
+{
+	datetime_t datetime;		
+}RTCMsg_t;
+
+extern xQueueHandle rtcMsgQ;
+
 void DS3231_GetTemp(byte *tempHigh, byte *tempLow);
 void DS3231_GetTime(byte *hours, byte *minutes, byte *seconds);
 void DS3231_GetDate(byte *months, byte *days, byte *years, byte *dayOfWeek);
@@ -33,7 +53,7 @@ void SetDate(byte *months, byte *days, byte *years, byte *dayOfWeek);
 byte asciiToHex(char input);
 void promptTime(byte *hours, byte *minutes, byte *seconds);
 void promptDate(byte *year, byte *month, byte *day, byte *dayOfWeek);
-
+void vRTCTask(void *pvParameters);
 
 // ---------------------------------------------------------------------------
 
