@@ -50,6 +50,8 @@ Source\tasks.c
 
 Source\timers.c
 
+TestTask.c
+
 uart\uart.c
 
 WiFi\WiFi.c

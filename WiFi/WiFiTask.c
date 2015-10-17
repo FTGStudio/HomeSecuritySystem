@@ -17,7 +17,7 @@ void vWifiTask(void *pvParameters)
 	{
 		if(xQueueReceive(wifiMsgQ, &msg, blockTime))
 		{
-			
+			printf("\n WiFi Message received\n");
 		}
 	}
 }

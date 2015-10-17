@@ -20,7 +20,7 @@ void vHallEffectTask(void *pvParameters)
 	{
 		if(xQueueReceive(hallEffectMsgQ, &msg, blockTime))
 		{
-			printf("Hall effect voltage %d", (int)msg.hallEffectData);
+			printf("\nHall Effect Message received\n");
 		}
 	}
 }

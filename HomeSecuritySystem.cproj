@@ -289,6 +289,12 @@
     <Compile Include="splash.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="TestTask.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TestTask.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="uart\uart.c">
       <SubType>compile</SubType>
     </Compile>

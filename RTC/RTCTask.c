@@ -18,9 +18,10 @@ void vRTCTask( void *pvParameters )
 	RTCMsg_t msg;
 	while(1)
 	{
+		
 		if(xQueueReceive(rtcMsgQ, &msg, blockTime))
 		{
-		
+			printf("\nRTC Message received\n");
 		}
 	}
 }

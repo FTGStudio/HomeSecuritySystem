@@ -15,9 +15,10 @@ void vLCDTask(void *pvParameters)
 	LCDMsg_t msg;
 	while(1)
 	{
+		
 		if(xQueueReceive(lcdMsgQ, &msg, blockTime))
 		{
-			printf("%s", msg.displayString);
+			printf("\nLCD Message received\n");
 		}
 	}
 }

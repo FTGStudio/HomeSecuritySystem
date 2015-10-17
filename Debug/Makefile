@@ -76,6 +76,7 @@ C_SRCS +=  \
 ../Source/queue.c \
 ../Source/tasks.c \
 ../Source/timers.c \
+../TestTask.c \
 ../uart/uart.c \
 ../WiFi/WiFi.c \
 ../WiFi/WiFiTask.c
@@ -112,6 +113,7 @@ Source/portable/MemMang/heap_1.o \
 Source/queue.o \
 Source/tasks.o \
 Source/timers.o \
+TestTask.o \
 uart/uart.o \
 WiFi/WiFi.o \
 WiFi/WiFiTask.o
@@ -141,6 +143,7 @@ Source/portable/MemMang/heap_1.o \
 Source/queue.o \
 Source/tasks.o \
 Source/timers.o \
+TestTask.o \
 uart/uart.o \
 WiFi/WiFi.o \
 WiFi/WiFiTask.o
@@ -170,6 +173,7 @@ Source/portable/MemMang/heap_1.d \
 Source/queue.d \
 Source/tasks.d \
 Source/timers.d \
+TestTask.d \
 uart/uart.d \
 WiFi/WiFi.d \
 WiFi/WiFiTask.d
@@ -199,6 +203,7 @@ Source/portable/MemMang/heap_1.d \
 Source/queue.d \
 Source/tasks.d \
 Source/timers.d \
+TestTask.d \
 uart/uart.d \
 WiFi/WiFi.d \
 WiFi/WiFiTask.d
@@ -217,6 +222,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
